@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包做选项卡</title>
+	<style type="text/css">
+		.btns{
+			width:500px;
+			height:50px;
+		}
+		.btns input{
+			width:100px;
+			height:50px;
+			background-color:#ddd;
+			color:#666;
+			border:0px;
+		}
+		.btns input.cur{
+			background-color:gold;
+		}
+		.contents div{
+			width:500px;
+			height:300px;
+			background-color:gold;
+			/*默认不显示*/
+			display:none;
+			text-align:center;
+			line-height:300px;
+		}
+		.contents div.active{
+			 display:block;
+			 
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var aBtn = document.getElementById('btns').getElementsByTagName('input')
+			// alert(aBtn.length); 测试是否获取到元素 3
+
+			var aCon = document.getElementById('contents').getElementsByTagName('div')
+			// alert(aCon.length);
+
+			for(var i=0;i<aBtn.length;i++){
+
+				// 使用闭包
+				(function(i){
+
+					aBtn[i].onclick = function(){
+
+						//因为 btns下input元素 和 contents下的div元素都为三个 长度都为3，循环遍历0,1,2所以 都可以在这个循环里直接写
+						for(var j=0;j<aBtn.length;j++){
+
+							// 先让三个input框样式全部没有
+							aBtn[j].className = '';
+
+							// 再把内容框全部隐藏起来
+							aCon[j].className = '';
+
+						}
+						// this关键字 值得是当前这个元素
+						this.className = 'cur';
+						aCon[i].className = 'active';
+						
+
+						// alert(i); 不管点哪个都只弹出3  因为存不下来元素索引 所以要用闭包
+
+					}
+				})(i)
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<div class="btns" id="btns">
+		<input type="button" name="" value="tab01" class="cur">
+		<input type="button" name="" value="tab02">
+		<input type="button" name="" value="tab03">
+	</div>
+
+	<div class="contents" id="contents">
+		<div class="active">tab文字内容一</div>
+		<div>tab文字内容二</div>
+		<div>tab文字内容三</div>
+	</div>
+</body>
+</html>

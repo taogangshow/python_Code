@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+    <ul>
+        {%for book in list%}
+        <li style="color:gold;font-size:30px;text-align:center;list-style:none">{{book.btitle}}</li>
+        {%endfor%}
+    </ul>
+    <div style="color:red;">
+        {{max_num}}
+    </div>
+    <ul>
+        {%for book in list2%}
+        <li>{{book.btitle}}({{book.bread}})</li>
+        {%endfor%}
+    </ul>
+    <div style="color:green;">
+        {%for book in list3%}
+        <span>书名:《{{book.btitle}}》阅读量({{book.bread}}) 评论量({{book.bcommet}})</span>
+        {%endfor%}
+    </div>
+</body>
+</html>

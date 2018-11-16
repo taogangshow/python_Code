@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery  绑定事件bind</title>
+	<!-- 
+	主动触发与自定义事件
+	主动触发 
+	可使用jquery对象上的trigger方法来触发对象上绑定的事件。
+
+	自定义事件 
+	除了系统事件外，可以通过bind方法自定义事件，然后用tiggle方法触发这些事件。 -->
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+
+
+
+			// 按钮一无法触动hello事件  
+			$('#btn').bind('hello',function(){
+
+				alert('hello!');
+				
+			});
+
+			$('#btn').bind('click',function(){
+
+				alert('click!');
+				
+			});
+
+			// 通过按钮二触动按钮一种的hello事件  
+			$('#btn2').click(function() {
+				$('#btn').trigger('hello');
+				$('#btn').trigger('click');
+			});
+		})
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="按钮" id="btn">
+	<input type="button" name="" value="按钮2" id="btn2">
+</body>
+</html>

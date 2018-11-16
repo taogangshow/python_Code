@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>弹性盒模型布局</title>
+		<!-- 弹性盒模型布局
+		1、容器属性
+		
+		display : flex
+		声明使用弹性盒布局
+
+		flex-direction : row | row-reverse | column | column-reverse
+		确定子元素排列的方向
+
+		flex-wrap : nowrap | wrap | wrap-reverse
+		元素超过父容器尺寸时是否换行
+
+		flex-flow : flex-direction | flex-wrap
+		同时设置flex-direction 和 flex-wrap
+
+		justify-content : flex-start | flex-end | center | space-between | space-around
+		子元素的尺寸确定之后，用此属性来设置flex-direction定义方向上的分布方式
+
+		align-items : flex-start | flex-end | center | baseline | stretch
+		子元素的尺寸确定之后，用此属性来设置flex-direction定义方向上的垂直方向的分布方式
+
+		align-content : flex-start | flex-end | center | space-between | space-around | stretch
+		设置多行子元素在行方向上的对齐方式 -->
+	<style type="text/css">
+		ul{
+			margin:0;
+			padding:0;
+			list-style:none;
+			width:500px;
+			border:5px solid #000;
+			background-color:gold;
+			margin:50px auto 0; 
+			display:flex;
+			/* 		 
+				flex-start:整体子元素靠左;
+				flex-end:整体子元素靠右;
+				center：整体子元素居中；
+				关闭li的margin看效果
+				space-between:第一个子元素靠左顶格，最后一个子元素靠右顶格，中间的元素等分间距;
+				space-around:第一个子元素靠左的间距和最后一个子元素靠右的间距是中间子元素间距的一半，中间的元素等分间距。
+			*/
+
+			justify-content:space-around;
+		
+
+		}
+		ul li{
+			width:50px;
+			height:50px;
+			margin:10px;
+			line-height:50px;
+			text-align:center;
+			background-color:green;
+			color:#fff;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+</body>
+</html>

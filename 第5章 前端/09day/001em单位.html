@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>em单位</title>
+	<!-- em单位是参照元素自身的文字大小来设置尺寸 -->
+	<style type="text/css">
+		.box1{
+			/*20em=字体大小*20=20px*20=400px*/
+			width:20em;
+			height:10em;
+			background-color:gold;
+			margin:50px auto 0;
+			/*font-size:20px;*/
+			/*将字体大小设置为25px 而width 和height不变得话 盒子会被撑开*/
+			font-size:25px;
+		}
+		.box2{
+			width:400px;
+			height:200px;
+			background-color:red;
+			margin:50px auto 0;
+			font-size:20px;
+		}
+		p{
+			font-size:18px;
+			/*首行缩进用到em 2em与36px同理*/
+			/*text-indent:36px;*/
+			text-indent:2em;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<p>首先了解em单位，em单位是参照元素自身的文字大小来设置尺寸，rem指的是参照根节点的文字大小，根节点指的是html标签，设置html标签的文字大小，其他的元素相关尺寸设置用rem，这样，所有元素都有了统一的参照标准，改变html文字的大小，就会改变所有元素用rem设置的尺寸大小。</p>
+</body>
+</html>

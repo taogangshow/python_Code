@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 3、Math
+
+		Math.random 获取0-1的随机数
+		Math.floor 向下取整
+		Math.ceil 向上取整 -->
+	<title>Math</title>
+	<script type="text/javascript">
+		var a = 10;
+		var b = 20;
+		// 默认是0~1之间的随机数
+		var num = Math.random();
+		alert(num);
+
+		// 获取10~20之间的随机数
+		var num_2 = Math.random()*(b-a+1)+a;
+		alert(num_2);
+		var arr = []
+		for(var i=0;i<10;i++){
+			var num_3 = Math.floor(Math.random()*(b-a+1)+a)
+			arr.push(num_3);
+		}
+		alert(arr);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

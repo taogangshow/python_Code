@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>变量作用域</title>
+	<!-- 变量作用域指的是变量的作用范围，javascript中的变量分为全局变量和局部变量。
+
+		1、全局变量：在函数之外定义的变量，为整个页面公用，函数内部外部都可以访问。
+		2、局部变量：在函数内部定义的变量，只能在定义该变量的函数内部访问，外部无法访问。 -->
+	<script type="text/javascript">
+
+
+		// 全局变量-函数外部定义的变量，函数内部和外部都可以访问,它的值可以共享。
+
+		// 局部变量-函数内部定义的变量，函数内部可以访问，外部无法访问，函数内部访问变量时，先在内部查找是否有此变量，如果有，就使用内部，如果没有，就去外部查找。
+
+		// 函数内部如果不用'var' 关键字定义变量，变量可能会变成全局变量
+
+
+
+		var a = 12;
+
+		e = 30;
+
+		function aa(){
+			// var a = 5;
+			var b = 10;
+			var c = 7;
+			alert(a);
+			alert(c);
+
+			d = 20;
+
+			a++;
+		}
+		// aa(); 演出12 7
+		// alert(c); 报错 c is not defined
+
+		// alert(a); 弹出12
+
+		// alert(d); 报错 d is not defined
+
+		// alert(e); 弹出30
+
+		aa();
+
+		alert(a); //弹出13
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

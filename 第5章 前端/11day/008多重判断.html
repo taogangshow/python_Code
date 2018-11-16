@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>多重判断</title>
+	<!-- 
+		条件语句
+		通过条件来控制程序的走向，就需要用到条件语句。
+
+		运算符 
+		1、算术运算符： +(加)、 -(减)、 *(乘)、 /(除)、 %(求余)
+		2、赋值运算符：=、 +=、 -=、 *=、 /=、 %=
+		3、条件运算符：==、===、>、>=、<、<=、!=、&&(而且)、||(或者)、!(否) -->
+	<script type="text/javascript">
+		var today = 6;
+		/*
+		if (today==1){
+			alert("语文");
+		}
+		else if(today==2){
+			alert("数学");
+		}
+		else if(today==3){
+			alert("英语");
+		}
+		else if(today==4){
+			alert("化学");
+		}
+		else if(today==5){
+			alert("物理");
+		}
+		else
+		{
+			alert("休息");
+		}*/
+
+
+		switch (today){
+			case 1:
+				alert('语文');
+				break;
+			case 2:
+				alert('数学');
+				break;
+			case 3:
+				alert('英文');
+				break;
+			case 4:
+				alert('化学');
+				break;
+			case 5:
+				alert('物理');
+				break;
+			default:
+				alert('休息');
+				break;
+		}
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

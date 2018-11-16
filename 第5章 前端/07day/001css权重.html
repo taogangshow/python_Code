@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css权重</title>
+	<style type="text/css">
+	/*important权重值最高  权重：10000+1
+		div{
+			color:red!important;
+		}
+		*/
+		/*
+		权重值:100
+		#box{
+			color:green;
+		}
+		*/
+		/*权重值:100+10+10+1*/
+		#body1 .con .box p{
+			color:blue;
+		}
+		.con2{
+			color:cyan;
+		}
+	</style>
+</head>
+<body body1>
+	<!-- style="color:gold" 权重值1000 
+	<div id="box" style="color:gold" class="con">这是一个div</div>
+	 -->
+
+	<!-- con con2权重一样的情况下 颜色由后者决定
+	<div id="box" class="con con2">这是一个div</div>
+	 -->
+
+	 <!-- 类选择器想让前者con权重比后者大即可以在con前面加上body -->
+
+	<div class="con con2">这是一个div</div>
+</body>
+</html>

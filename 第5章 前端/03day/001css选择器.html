@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css 选择器</title>
+	<style type="text/css">
+		/*这也是组选择器*/
+		div,p{
+			/*px代表像素*/
+			font-size: 30px;
+			color: blue
+		}
+		p:hover{
+			color: red;
+		}
+		#box{
+			color: pink
+		}
+		.yahei{
+			font-family: 'Microsoft Yahei';
+		}
+		.indent{
+			text-indent: 60px;
+		}
+		.list{
+			list-style: none;
+		}
+		.list li{
+			height: 30px;
+		}
+		.list a{
+			text-decoration: none;
+			color: green;
+		}
+		/*伪元素选择器，主要用在a标签，当鼠标放在a标签的文字就会变成你设置的样式*/
+		.list a:hover{
+			color: gold;
+			text-decoration: underline;
+			font-size: 20px;
+		}
+		/*组选择器:提取相同的文本样式*/
+		.box1,.box2,.box3{
+			font-size: 14px;
+			text-indent: 28px;
+		}
+		.box1{
+			/*font-size: 14px;
+			text-indent: 28px;*/
+			color: red;
+		}
+		.box2{
+			/*font-size: 14px;
+			text-indent: 28px;*/
+			color: gold;
+		}
+		.box3{
+			/*font-size: 14px;
+			text-indent: 28px;*/
+			color: pink;
+		}
+
+		.box1:before{
+			content: "在前面的文字 ";
+			color: violet;
+		}
+		.box2:after{
+			content: " 在后面的文字";
+			color: orange;
+		}
+	</style>
+</head>
+<body>
+	<!-- 元素就是标签的意思 -->
+	<div class="yahei">这是第一个div元素</div>
+	<div id="box" class="yahei">这是第二个div元素</div>
+	<div class="yahei indent">这是第三个div元素</div>
+
+	<p>这是一段文字，这是一段文字，这是一段文字</p>
+
+	<ul class="list">
+		<li><a href="">新闻标题</a></li>
+		<li><a href="">新闻标题</a></li>
+		<li><a href="">新闻标题</a></li>
+		<li><a href="">新闻标题</a></li>
+		<li><a href="">新闻标题</a></li>
+	</ul>
+
+	<div class="box1">文字001</div>
+	<div class="box2">文字002</div>
+	<div class="box3">文字003</div>
+
+</body>
+</html>

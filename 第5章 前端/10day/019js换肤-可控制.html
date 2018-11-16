@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js 换肤</title>
+	<link rel="stylesheet" type="text/css" href="1.css" id="link1">
+	<script type="text/javascript">
+
+		window.onload = function(){
+			var oBtn01 = document.getElementById('btn01');
+			var oBtn02 = document.getElementById('btn02');
+			// 提取行间事件  注意在行间调用函数是要写括号 而这里不要写 写了话就相当于你不点击按钮都已经执行了
+			oBtn01.onclick = skin1;
+			oBtn02.onclick = skin2;
+		}
+
+
+		function skin1(){
+			var oLink = document.getElementById('link1');
+			oLink.href = '1.css';
+		}
+		function skin2(){
+			var oLink = document.getElementById('link1');
+			oLink.href = '2.css';
+		}
+	</script>
+</head>
+<body>
+	<!-- 为什么script标签理的function函数获取id的元素 不用谢window.onload 那是因为程序已经加载完了后 我们才点击执行
+	 onclick 调用function函数来达到换肤的-->
+
+	<!-- 行间调用函数 -->
+
+	<!-- <input type="button" name="" value="皮肤1" onclick="skin1()" id="btn01">
+		 <input type="button" name="" value="皮肤2" onclick="skin2()" id="btn02"> -->
+
+	<input type="button" name="" value="皮肤1" id="btn01">
+	<input type="button" name="" value="皮肤2" id="btn02">
+
+	<div class="box01"></div>
+	<div class="box02"></div>
+</body>
+</html>

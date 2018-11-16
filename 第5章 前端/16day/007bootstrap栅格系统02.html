@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>bootstrap 容器----响应式布局</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<style type="text/css">
+		.pic{
+			height:336px;
+			max-width:240px;
+			background-color:#ddd;
+			border:1px solid #000;
+			/*margin-bottom:30px;*/
+			margin:15px auto;
+			text-align:center;
+		}
+		.pic span{
+			display:block;
+			height:126px;
+			background-color:#337ab7;
+			margin:4px;
+		}
+		.pic span a{
+			font:30px/30px 'Microsoft Yahei';
+			color:cyan;
+			line-height:70px;
+			text-decoration:none;
+		}
+		.row div:nth-child(2) span{
+			background-color:#8d4361;
+		}
+		.row div:nth-child(3) span{
+			background-color:#396d4b;
+		}
+		.row div:nth-child(4) span{
+			background-color:#6d6a39;
+		}
+		.row div:nth-child(5) span{
+			background-color:#973817;
+		}
+		.row div:nth-child(6) span{
+			background-color:#971792;
+		}
+		.row div:nth-child(7) span{
+			background-color:#971732;
+		}
+		.row div:nth-child(8) span{
+			background-color:#971786;
+		}
+		.row div:nth-child(9) span{
+			background-color:#171a97;
+		}
+		.row div:nth-child(10) span{
+			background-color:#179771;
+		}
+		.row div:nth-child(11) span{
+			background-color:#479717;
+		}
+		.row div:nth-child(12) span{
+			background-color:#979517;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-4 col-sm-6">
+				<div class="pic">
+					<span><a href="#">Python</a></span>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-4 col-sm-6">
+				<div class="pic">
+					<span><a href="#">Java</a></span>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-4 col-sm-6">
+				<div class="pic">
+					<span><a href="#">C++</a></span>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-4 col-sm-6"><div class="pic"><span><a href="#">photoshop</a></span></div></div>
+			<div class="col-lg-3 col-md-4 col-sm-6"><div class="pic"><span><a href="#">Php</a></span></div></div>
+			<div class="col-lg-3 col-md-4 col-sm-6"><div class="pic"><span><a href="#">JavaScript</a></span></div></div>
+			<div class="col-lg-3 col-md-4 col-sm-6"><div class="pic"><span><a href="#">Mysql</a></span></div></div>
+			<div class="col-lg-3 col-md-4 col-sm-6"><div class="pic"><span><a href="#">MongoDB</a></span></div></div>
+			<div class="col-lg-3 col-md-4 col-sm-6"><div class="pic"><span><a href="#">Redis</a></span></div></div>
+			<div class="col-lg-3 col-md-4 col-sm-6"><div class="pic"><span><a href="#">Jquery</a></span></div></div>
+			<div class="col-lg-3 col-md-4 col-sm-6"><div class="pic"><span><a href="#">Django</a></span></div></div>
+			<div class="col-lg-3 col-md-4 col-sm-6"><div class="pic"><span><a href="#">HTML</a></span></div></div>
+		</div>
+	</div>
+</body>
+</html>

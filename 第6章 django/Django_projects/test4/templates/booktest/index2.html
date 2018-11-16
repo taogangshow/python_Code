@@ -1,0 +1,10 @@
+{% extends 'booktest/base.html'%}
+{#在子模板中定义个block content1来填坑如果父级模板中有内容那么就会替换content1这个坑的内容#}
+{% block content1 %}
+    <h1>123</h1>
+{% endblock content1 %}
+{% comment %}
+实现：index2继承于base
+extends继承：继承，写在模板文件的第一行
+{% endcomment %}
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery 加载</title>
+	<!-- jquery的口号和愿望 Write Less, Do More（写得少，做得多）
+
+		1、http://jquery.com/ 官方网站
+		2、https://code.jquery.com/ 版本下载 -->
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript">
+		// alert($); 测试是否引入成功jquery库
+
+		// 获取div元素内容 原生js库 写法
+		window.onload = function(){
+			var oDiv = document.getElementById('div');
+			alert(oDiv.innerHTML);
+		}
+
+		// 获取div元素内容 jquery库 写法
+		/*
+		$(document).ready(function(){
+			var $div = $('#div');
+			alert($div.html()+'jquery');
+		})
+		*/
+
+		// 简写上面的jquery代码
+		$(function(){
+			var $div = $('#div');
+			alert($div.html()+'jquery');
+		})
+
+		// jquery最先打印出来 为什么呢 因为 window.onload实际上是等整个页面渲染完才打印  而jquery写法中的ready是页面的节点加载完就打印 不用等页面渲染
+	</script>
+</head>
+<body>
+	<div id="div">这是一个div元素</div>
+</body>
+</html>

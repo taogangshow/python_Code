@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原型模式</title>
+	<script type="text/javascript">
+
+		function Person(name,age,job){
+			// 属性在构造函数里写
+			this.name = name;
+			this.age = age;
+			this.job = job;
+		}
+
+		// 方法共享通用
+		Person.prototype.showname = function(){
+			alert(this.name);
+		}
+
+		Person.prototype.showage = function(){
+			alert(this.age);
+		}
+
+		Person.prototype.showjob = function(){
+			alert(this.job);
+		}
+
+		var tom = new Person('Tom',18,'reporter');
+		var jack = new Person('jack',20,'worker');
+
+		tom.showjob();
+		jack.showjob();
+
+		alert(tom.showage==jack.showage); //弹出true  判断两个方法一不一致
+
+		tom.showage = function(){
+			alert('我的年龄是:'+this.age+'岁');
+		}
+
+		tom.showage();
+		jack.showage();
+
+		alert(tom.showage==jack.showage); //弹出false 因为我重写了tom.showage 方法
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

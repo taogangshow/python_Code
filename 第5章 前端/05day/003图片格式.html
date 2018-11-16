@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body{
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<!-- jpg的图片是不可能保存为透明背景的 -->
+	<h3>jpg图片</h3>
+	<img src="images/002.jpg" alt="水果">
+	<img src="images/002-01.jpg" alt="水果">
+	<img src="images/002-02.jpg" alt="水果">
+	<!-- 将gif图存储为web格式jpg图片会将背景设置为白色背景 -->
+	<img src="images/003-01.jpg" alt="汽车">
+	<!-- gif是可以将图片保存为透明背景的 -->
+	<h3>gif图片</h3>
+	<img src="images/003-01.gif" alt="汽车">
+	<img src="images/003-02.gif" alt="汽车">
+	<img src="images/004-02.gif" alt="卡通人物">
+
+	<h3>png图片</h3>
+	<!-- 人物下的背影是半透明的 -->
+	<!-- png比gif好的点是，png图片的轮廓是光滑的 而gif图片的外轮是由锯齿的 -->
+	<img src="images/004-01.png" alt="汽车">
+	<img src="images/004-02.png" alt="卡通人物">
+
+	<h3>webp图片</h3>
+	<img src="images/005.webp" alt="水果">
+	<!-- 上面几种都是属于位图包括psd格式图片，位图也叫点阵图，是由一个个的方形的像素点排列在一起拼接而成的，位图在放大时，图像会失真 -->
+	<!-- 矢量图就是下面的svg和flash动画 容量小 放大不失真 但是颜色不支持丰富的图片 适合单一颜色图片 -->
+	<h3>svg图片</h3>
+	<img src="images/006.svg" alt="汽车">
+
+	<h3>swf图形</h3>
+	<embed src="images/007.swf"></embed>
+
+	<!-- 总结：在网页里面怎么选择图片格式 -->
+	<!-- 
+	1、网页制作中，如果要使用不透明背景的图片，就使用jpg图片；如果要使用透明或者半透明背景的图片，就使用png图片；
+	2、制作网页图标时候，如果图标含多种颜色，可以使用gif或png图片；如果图标是单色，而且要求有很好的显示效果，可以使用svg；如果是动画图标，可以使用gif。
+
+</body> -->
+</html>

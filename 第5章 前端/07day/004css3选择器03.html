@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css3 新选择器</title>
+	<style type="text/css">
+		/*E:disabled 失效的表单控件*/
+		input:disabled{
+			background-color:yellow;
+		}
+
+		/*E:enabled 可用的表单控件
+		input:enabled{
+			background-color:red;
+		}
+		*/
+
+		/*E:checked 选中的checkbox
+		input:checked + label{
+			color:pink;
+		}
+		*/
+
+		.box{
+			width:100px;
+			height:100px;
+			background-color:cyan;
+			/*隐藏*/
+			display:none;
+		}
+		input:checked + div{
+			display:block;
+		}
+	</style>
+</head>
+<body>
+	<!-- disabled代表失效输入框 -->
+	<input type="text" name="" disabled>
+	<input type="text" name="">
+	<br>
+	<!-- <input type="checkbox" name=""><label>选择的状态</label> -->
+	<input type="checkbox" name=""><div class="box">这是一个div元素</div>
+</body>
+</html>

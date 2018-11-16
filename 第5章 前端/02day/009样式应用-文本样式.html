@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css内嵌式</title>
+	<!-- color 设置文字的颜色，如： color:red;
+    font-size 设置文字的大小，如：font-size:12px;
+    font-family 设置文字的字体，如：font-family:'微软雅黑';
+    font-style 设置字体是否倾斜，如：font-style:'normal'; 设置不倾斜，font-style:'italic';设置文字倾斜
+    font-weight 设置文字是否加粗，如：font-weight:bold; 设置加粗 font-weight:normal 设置不加粗
+    font 同时设置文字的几个属性，写的顺序有兼容问题，建议按照如下顺序写： font：是否加粗 字号/行高 字体；如： font:normal 12px/36px '微软雅黑';
+    line-height 设置文字的行高，如：line-height:24px;
+    text-decoration 设置文字的下划线，如：text-decoration:none; 将文字下划线去掉
+    text-indent 设置文字首行缩进，如：text-indent:24px; 设置文字首行缩进24px
+    text-align 设置文字水平对齐方式，如text-align:center 设置文字水平居中 -->
+	<style type="text/css">
+	    /**是匹配所有标签，实际开发不要用，这种会影响性能的*/
+	    *{
+	    	margin: 0;
+	    	padding: 0;
+	    }
+		div{
+			color: red;font-size: 20px;
+		    font-family: Microsoft Yahei;
+		    line-height: 40px;
+		    text-indent: 40px
+		}
+		em{
+			/*设置文字不倾斜*/
+			font-style:normal;
+		}
+		span{
+			font-weight: bold;
+		}
+		h2{
+			font:30px/40px 'Microsoft Yahei';
+			/*font-family: Microsoft Yahei;*/
+			/*font-weight: normal;*/
+			text-align: center;
+			/*css颜色表示法
+            css颜色值主要有三种表示方法：
+            1、颜色名表示，比如：red 红色，gold 金色
+            2、rgb表示，比如：rgb(255,0,0)表示红色
+            3、16进制数值表示，比如：#ff0000 表示红色，这种可以简写成 #f00*/
+			/*color: gold*/
+			/*color: rgb(255,0,0);*/
+			/*color: #ff0000*/
+			color: #f00
+
+
+		}
+		a{
+			text-decoration:none
+		}
+	</style>
+</head>
+<body>
+	<a href="http:www.itcast.cn">传智播客</a>
+	<h2>文本样式演示</h2>
+	<!-- 样式语言css -->
+	<!-- 将css放到html里面有三种方式:外联式 内联式 嵌入式-->
+	<!-- 不设置文本像素默认就是16px -->
+	<div> 
+	HTML是 <em>HyperText Mark-up Language</em> 的首字母简写，意思是超文本标记语言，超文本指的是超链接，标记指的是标签，是一种用来制作网页的语言，这种语言由一个个的标签组成，用这种语言制作的文件保存的是一个文本文件，文件的扩展名为html或者htm，一个html文件就是一个网页，html文件用编辑器打开显示的是文本，可以用文本的方式编辑它，如果用浏览器打开，浏览器会按照标签描述内容将文件渲染成网页，显示的网页可以从一个网页链接跳转到另外一个网页。
+    </div>
+    <br />
+    <!-- 想要将下面文本内容的样式跟上面一样除了将上面样式代码复制到div中 -->
+    <div>
+    	<span>html</span>的标签大部分是成对出现的,少量是单个出现的，特定标签之间可以相互嵌套，嵌套就是指一个标签里面可以包含一个或多个其他的标签，包含的标签和父标签可以是同类型的，也可以是不同类型的。
+    </div>
+	
+</body>
+</html>

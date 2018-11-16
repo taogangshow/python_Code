@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>封闭函数</title>
+	<!-- 封闭函数是javascript中匿名函数的另外一种写法，创建一个一开始就执行而不用命名的函数。 -->
+	<script type="text/javascript">
+		// function myalert(){
+		// 	// alert("欢迎访问我的主页!")
+		// 	var str = '欢迎访问我的主页!';
+		// 	alert(str);
+		// }
+		// myalert();
+
+		// 将上面的myalert函数  去掉函数名  就是相当于将调用这块myalert直接改成整个函数体再();
+
+
+
+		/*
+		封闭函数的一般写法：
+
+		(function(){
+			var str = '欢迎访问我的主页！';
+			alert(str); 
+		})();
+
+		*/
+
+
+		// 封闭函数定义：(function(){  .... })()
+
+
+
+		// 封闭函数其他的写法(高手写法)： 在匿名函数前加“！” 或者“~”，之后加“()”。
+
+		~function(){			
+			var str = '欢迎访问我的主页！';
+			alert(str); 
+		}();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

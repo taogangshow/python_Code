@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js 复习</title>
+	<!-- 第三种方式外联式 
+	<script type="text/javascript" src="test.js"></script>-->
+
+	<!-- 第二种内嵌script标签 -->
+	<script type="text/javascript">
+		window.onload = function(){
+			// 内置对象:document
+
+			var oDiv = document.getElementById('div1');
+			var oBtn1 = document.getElementById('btn01');
+			var oBtn2 = document.getElementById('btn02');
+			var sty = 'background';
+			// document.getElementById('div1').title = '这是一个div标签';
+			// document.getElementById('div1').style.color = 'red';
+			// document.getElementById('div1').style.fontSize = '30px';
+			oDiv.title = '这是一个div标签';
+			oDiv.style.color = 'red';
+			oDiv.style.fontSize = '30px';
+
+			// oDiv.style[sty] = 'gold';
+			oDiv.onclick = myalert;
+
+			oBtn1.onclick = change01;
+			oBtn2.onclick = change02;
+
+			// 提取行间事件  
+			function myalert(){
+				alert("OK!");
+			}
+			// 这里的function函数写在函数里面是因为可以用到里面的东西 
+			function change01(){
+				oDiv.className = 'sty01'
+			}
+			function change02(){
+				oDiv.className = 'sty02'
+			}
+		}
+
+	</script>
+	<style type="text/css">
+		.sty01{
+			width:200px;
+			height:200px;
+			background-color:cyan;
+		}
+		.sty02{
+			width:300px;
+			height:300px;
+			background-color:gold;
+		}
+	</style>
+</head>
+<body>
+	<!-- 第一种行间事件 不建议使用js和标签混合在一块
+	<div onclick="alert('ok!')" id="div1">div标签</div> -->
+	<div id="div1" class="sty01">div标签</div>
+	<input type="button" name="" value="样式1" id="btn01">
+	<input type="button" name="" value="样式2" id="btn02">
+</body>
+</html>

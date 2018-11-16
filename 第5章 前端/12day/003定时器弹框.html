@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定时器弹框</title>
+	<script type="text/javascript">
+		window.onload = function(){
+
+			var oPop = document.getElementById('pop');
+			var oShut = document.getElementById('shutof');
+			setTimeout(showpop,3000);
+			function showpop(){
+				oPop.style.display = 'block';
+			}
+			oShut.onclick = function(){
+				oPop.style.display = 'none';
+			} 
+		}
+
+		// setTimeout(myalert,3000);
+		// function myalert(){
+		// 	// alert("hello!")
+		// }
+	</script>
+	<style type="text/css">
+		.pop_con{
+			display:none;
+		}
+		.pop{
+			width:400px;
+			height:300px;
+			background-color:#fff;
+			border:1px solid #000;
+			position:fixed;
+			left:50%;
+			top:50%;
+			margin-left:-200px;
+			margin-top:-150px;
+			z-index:9999;
+		}
+		.mask{
+			position:fixed;
+			width:100%;
+			height:100%;
+			background-color:#000;
+			left:0;
+			top:0;
+			opacity:0.3;
+			filter:alpha(opacity=30);
+			z-index:9990;
+
+		}
+		.pop h3{
+			float:left;
+		}
+		.pop a{
+			display:block;
+			float:right;
+			margin-top:18.72px;
+			text-decoration:none;
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<h1>首页标题</h1>
+	<p><a href="">正文内容</a></p>
+	<div class="pop_con" id="pop">
+		<div class="pop">
+			<h3>提示信息</h3>
+			<a href="#" id="shutof">关闭</a>
+		</div>
+		<div class="mask"></div>
+	</div>
+</body>
+</html>

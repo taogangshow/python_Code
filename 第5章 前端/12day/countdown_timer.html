@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<embed src="love_you.mp3" hidden="true" autostart="true" loop="true"></embed>
+	<meta charset="UTF-8">
+	<title>Countdown</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oDiv = document.getElementById('div1');
+			var oDiv2 = document.getElementById('div2');
+			var oDiv3 = document.getElementById('div3');
+			var oDiv4 = document.getElementById('div4');
+
+			function timenow(){
+
+				var now = new Date();
+				// alert(now);
+				var year = now.getFullYear();
+				var month = now.getMonth()+1;
+				var date = now.getDate();
+				var week = now.getDay();
+				var hour = now.getHours();
+				var minute = now.getMinutes();
+				var second = now.getSeconds();
+				// alert(week);
+
+				oDiv.innerHTML = '当前时间是：'+year+'年'+todou(month)+'月'+todou(date)+'日'+' '+toweek(week)+'  '+
+				todou(hour) +':'+ todou(minute)+':'+todou(second);		
+			}
+			// 解决刷新时 出现一秒空白的bug
+			timenow()
+
+			var timer_now = setInterval(timenow,1000);
+
+			
+			function timeago(){
+
+				var now = new Date();
+				// alert(now);
+				var year = now.getFullYear();
+				var month = now.getMonth()+1;
+				var date = now.getDate();
+				var week = now.getDay();
+				var hour = now.getHours();
+				var minute = now.getMinutes();
+				var second = now.getSeconds();
+				// alert(week);
+
+				var work_time_hour = todou(hour) - 8;
+				var work_time_minute = todou(minute);
+				var work_time_second = todou(second);
+				
+				if(work_time_hour>=14)
+				{
+					clearInterval(timer_ago);
+					return;
+				}
+
+				oDiv2.innerHTML = '目前工作了：'+ todou(work_time_hour) +'时'+work_time_minute+'分'+
+				work_time_second+'秒';		
+
+			}
+			// 解决刷新时 出现一秒空白的bug
+			timeago()
+
+			var timer_ago = setInterval(timeago,1000);
+
+			
+			function timeleft(){
+				
+				//获取当前终端时间
+				var now = new Date();
+
+				var year = now.getFullYear();
+				var month = now.getMonth()+1;
+				var date = now.getDate();
+				
+				var future = new Date(year,month-1,date,22,0,1);
+				var lefts = parseInt((future-now)/1000);
+
+				var day = parseInt(lefts/86400);
+
+				var hour = parseInt((lefts%86400)/3600);
+
+				var minute = parseInt(((lefts%86400)%3600)/60);
+
+				var second = lefts%60;
+
+				if(lefts<=0)
+				{
+					alert("终于下班了....可以high了")
+					window.location.href = "file:///D:/Sublime%20Text%203/Sublime%20Text%203/Projects/01day/huya.html";
+					clearInterval(timer_lefts);
+					return;
+				}
+
+				oDiv3.innerHTML = '距离下班还有：'+todou(hour)+'时'+todou(minute)+'分'+todou(second)+'秒';
+
+			}
+
+			timeleft();
+
+			var timer_lefts = setInterval(timeleft,1000);
+
+			function love_timeleft(){
+				var now = new Date();
+
+				// 计算相爱的时间
+				var love_ago = new Date(2017,7,4,17,20,0);
+				var love_lefts = parseInt((now-love_ago)/1000);
+				var love_day = parseInt(love_lefts/86400);
+				var love_hour = parseInt((love_lefts%86400)/3600);
+				var love_minute = parseInt(((love_lefts%86400)%3600)/60);
+				var love_second = love_lefts%60;
+
+				if(love_lefts<=0)
+				{
+					clearInterval(love_timeleft);
+				}
+
+				oDiv4.innerHTML = '@wucaixia 与 @taogang 在一起的'+'<br>'+
+				'第<span>'+love_day+'</span>天<span>'+todou(love_hour)+'</span>小时<span>'+
+				todou(love_minute)+'</span>分钟<span>'+todou(love_second)+'</span>秒';
+
+			}
+			love_timeleft();
+			var love_timelefts = setInterval(love_timeleft,1000);
+		}
+
+		function toweek(num){
+			switch(num){
+				case 0:
+					return '星期天';
+					break;
+				case 1:
+					return '星期一';
+					break;
+				case 2:
+					return '星期二';
+					break;
+				case 3:
+					return '星期三';
+					break;
+				case 4:
+					return '星期四';
+					break;
+				case 5:
+					return '星期五';
+					break;
+				case 6:
+					return '星期六';
+					break;
+
+
+			}
+		}
+		function todou(num){
+			if(num<10){
+				return '0'+num;
+			}
+			else
+			{
+				return num;
+			}
+
+		}
+	</script>
+	<style type="text/css">
+		.now_time,.work_time,.go_off_work_time{
+			text-align:center;
+			margin-top:50px;
+			font:30px/30px 'Microsoft Yahei';
+			color:#56655f;
+		}
+		.loves_time{
+			text-align:center;
+			margin-top:100px;
+			font:30px/30px 'Microsoft Yahei';
+			color:#000;
+		}
+		.loves_time span{
+			position:relative;
+			font:50px/100px 'Microsoft Yahei';
+			color:#f40d64;
+			padding:0 5px;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1" class="now_time"></div>
+	<div id="div2" class="work_time"></div>
+	<div id="div3" class="go_off_work_time"></div>
+	<div id="div4" class="loves_time"></div>
+</body>
+</html>

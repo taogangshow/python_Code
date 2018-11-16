@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>变量函数预解析</title>
+
+	<!-- 
+	变量与函数预解析 
+	JavaScript解析过程分为两个阶段，先是编译阶段，然后执行阶段，在编译阶段会将function定义的函数提前，并且将var定义的变量声明提前，将它赋值为undefined。 -->
+
+	<script type="text/javascript">
+		alert(a); //弹出undefined
+
+		//alert(c); 会报错 提示c is not defined
+
+		// 怎么理解上面 a 和 c ，程序会预解析 变量a定义了 只是值没有定义   而c没有声明 也没有定义值 所以找不到变量c  程序会预解析
+
+		var a = 123;
+
+		// 将调用放在函数前面也一样打印出hello，原因是在js里面不管你的调用在函数的前后还是后面 默认都会函数的声明和定义提前
+		// 为什么会将调用放在函数的前面，因为如果不这样做会打乱我们读取程序的逻辑，前面主逻辑会显得很乱，这样的方式可以精简我们的程序，方便我们读取程序
+		myalert();
+
+		function myalert(){
+			alert('hello');
+		}
+		// myalert();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

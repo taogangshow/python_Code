@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery 复习</title>
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			/*
+			ready 的完整写法
+			$(document).ready(function() {
+				
+			});
+			*/
+
+			// ready 简写
+			$(function(){
+
+				$('.list').css({
+					background:'gold'
+				}).children('li').css({background:'green',marginBottom:'10px',height:'30px',color:'#fff'});
+
+				//获取第三个li元素的索引值
+				alert($('.list li').eq(2).index());
+
+				$('.list li').click(function() {
+					// 使用原生js方法弹出li元素里的内容
+					// alert(this.innerHTML);
+
+					// 使用jquery方法弹出li元素里的内容
+					// alert($(this).text());
+
+					// 使用jquery方法弹出li元素的索引值
+					// alert($(this).index());
+
+					$(this).css({fontSize:'20px'});
+				});
+
+				$('#btn').click(function(){
+					$('.list').slideToggle();
+				})
+
+
+			});
+		})
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="切换" id="btn">
+	<ul class="list">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+	</ul>
+</body>
+</html>

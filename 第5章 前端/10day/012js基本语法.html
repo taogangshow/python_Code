@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js 基本语法</title>
+	<!-- 变量类型
+
+	5种基本数据类型：
+	number、string、boolean、undefined、null
+
+	1种复合类型：
+	object
+
+	变量、函数、属性、函数参数命名规范
+
+	1、区分大小写
+	2、第一个字符必须是字母、下划线（_）或者美元符号（$）
+	3、其他字符可以是字母、下划线、美元符或数字 -->
+	<script type="text/javascript">
+
+
+		// 单行注释文字
+
+		/*  
+		  多行注释
+
+		  变量定义：
+
+
+		*/
+		// number类型
+		var a = 18;
+		var A = 13;
+		// string类型
+		var b = 'abc';
+		// 定义多个变量
+		var c= 13,d= 'ert',e= '1213' 
+		// boolean
+		var B = true;
+		// undefined 变量C的值没有定义 
+		var C;
+		// 打印结果为undefined
+		// alert(C);
+
+		// 下面的语句会出错，开发者模式在console中会提示错误
+		// 如果把javascript写在元素的上面，就会出错，因为页面上从上往下加载执行的
+
+		// document.getElementById('div1').title = '我看到了!'
+
+		
+	</script>
+	<style type="text/css">
+		#div1{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1" class="div2" style="color:gold" title="这是div元素，你看到了吗？">这是一个div元素</div>
+	<!-- 第一种方法：将javascript放到页面最下边 -->
+	<script type="text/javascript">
+		document.getElementById('div1').title = '我看到了!';
+	</script>
+</body>
+</html>

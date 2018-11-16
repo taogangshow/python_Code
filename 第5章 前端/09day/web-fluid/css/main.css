@@ -1,0 +1,131 @@
+body{
+	font-family:'Microsoft Yahei'
+}
+
+.main_wrap{
+	/*移动端技巧将div容器设置为绝对定位并且四方值设置为0，这样就会拉满很手机屏幕一样大*/
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	background-color:gold;
+}
+
+.header{
+	height:50px;
+	background-color:#37ab40;
+	/*设置父级相对定位 子级search以父级定位作参照*/
+	position:relative;
+}
+
+.header .logo{
+	width:89px;
+	height:26px;
+	display:block;
+	margin:7px auto 0;
+}
+
+.header .search{
+	position:absolute;
+	width:27px;
+	height:27px;
+	top:12px;
+	right:15px;
+	background:url(../images/icons.png) left top no-repeat;
+	background-size:60px 840px;
+}
+
+/*图片有一个特性 那就是等比例缩放 只需要设置宽度为父级的100% 或者高度 不能两个都设置 即可达到缩放*/
+.header .logo img{
+	width:100%;
+}
+/*center_wrap之所以没有像header那样使用文档流方式 是因为高度无法确定 因为每个手机的高度不一致*/
+.center_wrap{
+	position:absolute;
+	left:0;
+	right:0;
+	top:50px;
+	bottom:50px;
+	background-color:#efefef;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+
+.menu{
+	height:173px;
+	background-color:#fff;
+	margin-top:10px;
+	padding-top:12px;
+}
+
+.menu li{
+	width:25%;
+	height:81px;
+	float:left;
+}
+
+.menu li a{
+	display:block;
+	width:56px;
+	height:56px;
+	background:url(../images/icons.png) left  -60px no-repeat;
+	background-size:60px 840px;
+	margin:0 auto;
+}
+
+.menu li:nth-child(2) a{
+	background:url(../images/icons.png) left -120px no-repeat;
+	background-size:60px 840px;
+}
+
+.menu li:nth-child(3) a{
+	background:url(../images/icons.png) left -180px no-repeat;
+	background-size:60px 840px;
+}
+
+.menu li:nth-child(4) a{
+	background:url(../images/icons.png) left -240px no-repeat;
+	background-size:60px 840px;
+}
+
+.menu li:nth-child(5) a{
+	background:url(../images/icons.png) left -300px no-repeat;
+	background-size:60px 840px;
+}
+
+.menu li:nth-child(6) a{
+	background:url(../images/icons.png) left -360px no-repeat;
+	background-size:60px 840px;
+}
+
+.menu li:nth-child(7) a{
+	background:url(../images/icons.png) left -420px no-repeat;
+	background-size:60px 840px;
+}
+
+.menu li:nth-child(8) a{
+	background:url(../images/icons.png) left -480px no-repeat;
+	background-size:60px 840px;
+}
+
+.menu li h2{
+	height:25px;
+	font:bold 13px/25px 'Microsoft Yahei';
+	text-align:center;
+	color:#666;
+}
+
+.footer{
+	position:absolute;
+	width:100%;
+	height:50px;
+	left:0;
+	bottom:0;
+	background-color:#fff;
+	
+}
+
+.slide img{
+	width:100%;
+}

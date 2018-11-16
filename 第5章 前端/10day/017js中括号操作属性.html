@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js 操作class</title>
+	<!-- 操作属性的方法 
+		1、“.” 操作
+		2、“[ ]”操作 -->
+	<script type="text/javascript">
+		window.onload = function(){
+			var oDiv = document.getElementById('div1')
+			// oDiv.style.color = 'red'
+			// oDiv.style.color = red  这样写是错误的 因为它会认为red是变量 结果发现并没有定义red这个变量
+
+			// var attr = 'color'
+			// oDiv.style.attr = 'red' 这样写也是错误的 因为它在执行这句话的时候会在style属性里面去找attr这个变量 发现没找到就不会找了
+
+			// 解决上面的方法 使用[] /* 通过 [] 操作属性可以写变量	*/
+			var attr = 'color';
+
+			// oDiv.style[attr] = 'red'; 与下面写法效果一样
+			oDiv['style'][attr] = 'red';
+
+
+			// ‘.’的方式是不可以写变量的 ‘[]’方式是可以写变量的
+
+			/* 通过 innerHTML可以读写元素包括的内容*/
+			alert(oDiv.innerHTML);
+
+			var oDiv2 = document.getElementById('div2')
+			oDiv2.innerHTML = '这是第二个div元素';
+
+			var oDiv3 = document.getElementById('div3')
+			oDiv3.innerHTML = "<a href = 'http://www.itcast.cn'>传智播客</a>"
+
+		}
+	</script>
+</head>
+<body>
+	<div id="div1">这是一个div元素</div>
+	<div id="div2"></div>
+	<div id="div3"></div>
+</body>
+</html>

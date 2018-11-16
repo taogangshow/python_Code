@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>作业-计算器</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oInput01 = document.getElementById('input01');
+			var oInput02 = document.getElementById('input02');
+			var oBtn = document.getElementById('btn');
+			var oFuhao = document.getElementById('fuhao');
+		
+			
+
+			oBtn.onclick = function(){
+				var val01 = oInput01.value;
+				var val02 = oInput02.value;
+				var fuhao = oFuhao.value
+
+				// 用户输入进行判断
+				if(val01=='' || val02==''){
+					alert("输入不能为空！");
+					// 结束整个函数
+					return;
+				}
+
+				// alert(fuhao);
+				switch (fuhao){
+					case '0':
+						var rs = add(val01,val02);
+						alert(rs);
+						break;
+					case '1':
+						var rs = sub(val01,val02);
+						alert(rs);
+						break;
+					case '2':
+						var rs = mul(val01,val02);
+						alert(rs);
+						break;
+					case '3':
+						var rs = divide(val01,val02);
+						alert(rs);
+						break;
+				}
+			}
+			
+			
+
+			function add(a,b){
+				var c = parseInt(a)+parseInt(b);
+				return c
+			}
+
+			function sub(a,b){
+				var c = parseInt(a)-parseInt(b);
+				return c
+			}
+
+			function mul(a,b){
+				var c = parseInt(a)*parseInt(b);
+				return c
+			}
+
+			function divide(a,b){
+				var c = parseInt(a)/parseInt(b);
+				return c
+			}
+			
+
+
+		}
+	</script>
+</head>
+<body>
+	<input type="" name="" id="input01">
+	<select id="fuhao">
+		<option value="0">+</option>
+		<option value="1">-</option>
+		<option value="2">*</option>
+		<option value="3">/</option>
+	</select>
+	<input type="" name="" id="input02">
+	<input type="button" name="" value="计算" id="btn">
+</body>
+</html>

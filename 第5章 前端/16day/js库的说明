@@ -1,0 +1,71 @@
+(1).zepto js库
+Zepto是一个轻量级的针对现代高级浏览器的JavaScript库， 它与jquery有着类似的api。 如果你会用jquery，那么你也会用zepto。Zepto的一些可选功能是专门针对移动端浏览器的；它的最初目标是在移动端提供一个精简的类似jquery的js库。
+zepto官网：http://zeptojs.com/
+zepto中文api：http://www.css88.com/doc/zeptojs_api/
+还可以定制下载，需要什么模块就下载
+zepto自定义构建地址：http://github.e-sites.nl/zeptobuilder/
+tap 元素tap的时候触发，此事件类似click，但是比click快。
+longTap 当一个元素被按住超过750ms触发。
+swipe, swipeLeft, swipeRight, swipeUp, swipeDown 当元素被划过时触发。(可选择给定的方向)
+*******************************************************************************************************************
+*******************************************************************************************************************
+
+(2).swiper js
+swiper.js是一款成熟稳定的应用于PC端和移动端的滑动效果插件，一般用来触屏焦点图、触屏整屏滚动等效果。 swiper分为2.x版本和3.x版本，2.x版本支持低版本浏览器(IE7)，3.x放弃支持低版本浏览器，适合应用在移动端。
+
+2.x版本中文网址：http://2.swiper.com.cn/
+3.x版本中文网地址：http://www.swiper.com.cn/
+
+swiper使用方法：(在官网上有详细教程以及代码和效果演示 直接copy代码拿来用即可)
+<script type="text/javascript" src="js/swiper.min.js"></script>
+......
+
+<link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+......
+
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">slider1</div>
+    <div class="swiper-slide">slider2</div>
+    <div class="swiper-slide">slider3</div>
+  </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
+
+<script> 
+var swiper = new Swiper('.swiper-container', {
+    pagination: '.swiper-pagination',
+  prevButton: '.swiper-button-prev',
+  nextButton: '.swiper-button-next',
+    initialSlide :1,
+  paginationClickable: true,
+  loop: true,
+  autoplay:3000,
+  autoplayDisableOnInteraction:false
+});
+</script>
+
+swiper使用参数：
+1、initialSlide：初始索引值，从0开始
+2、direction：滑动方向 horizontal | vertical
+3、speed：滑动速度，单位ms
+4、autoplay：设置自动播放及播放时间
+5、autoplayDisableOnInteraction：用户操作swipe后是否还自动播放，默认是true，不再自动播放
+6、pagination：分页圆点
+7、paginationClickable：分页圆点是否点击
+8、prevButton：上一页箭头
+9、nextButton：下一页箭头
+10、loop：是否首尾衔接
+11、onSlideChangeEnd：回调函数，滑动结束时执行
+*******************************************************************************************************************
+*******************************************************************************************************************
+
+(3).引入说明
+1>.当你的界面已经引入了zepto.min.js或者是jquery-1.12.4.min.js 那么就引入swiper.jquery.min.js即可
+
+2>.如果你得页面没有引入zepto.min.js或者是jquery-1.12.4.min.js 那么就直接引入swiper.min.js即可，但是就没法用ready加载了，
+就需要用原生js加载即window.onload = function(){};
+
+3>.切记还需要引入swiper的css/swiper.min.css文件

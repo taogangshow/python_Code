@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>条件语句</title>
+	<style type="text/css">
+		.box{
+			width:300px;
+			height:300px;
+			background-color:gold;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oBtn = document.getElementById('btn');
+			var oDiv = document.getElementById('box');
+
+			// alert(oDiv.style.display); 弹成 空 的值
+
+			oBtn.onclick = function(){
+				// oBox.style.display = 'none';
+
+				/*
+				if (oDiv.style.display == 'none'){
+					oDiv.style.display = 'block';
+				}
+				else
+				{
+					oDiv.style.display = 'none';
+				}
+				*/
+
+				// 如果将上面修改成下面 也就是if == block，点击第一次切换并没有任何变化  需要点击第二次
+				// 那是因为alert(oDiv.style.display)的值为空 解决方法如下
+
+				if (oDiv.style.display == 'block' || oDiv.style.display == ''){
+					oDiv.style.display = 'none';
+				}
+				else
+				{
+					oDiv.style.display = 'block';
+				}
+
+
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="切换" id="btn">
+	<div class="box" id="box"></div>
+</body>
+</html>

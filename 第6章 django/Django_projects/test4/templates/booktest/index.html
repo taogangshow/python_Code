@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a style="text-decoration:none" href="{% url 'booktest:show' '123' '456' %}">显示</a>　
+{%comment%}
+多行注释
+{%endcomment%}
+<div style="font-size:30px;text-align:center;color:red">{{hero.hname}}</div>
+{{hero.showname}}
+<br/>
+<ul style="list-style:none">
+    {% for hero in list1 %}
+        {#forloop.counter表示当前是第几次循环#}
+        <li>{{ forloop.counter}}:{{ hero.showname }}</li>
+        {% empty %}
+        {#empty给出的列表为或列表不存在时，执行此处#}
+        <li>数据不存在</li>
+    {% endfor %}
+</ul>
+<div style="float:right;margin-right:700px;margin-top:-465px;position:relative">
+    需求：将奇数行显示为红色，偶数行的显示为蓝色
+    <ul style="list-style:none;position:absolute">
+        {% for hero in list1 %}
+            {#使用过滤器|divisibleby进行数据求余运行#}
+            {% if forloop.counter|divisibleby:2%}
+                <li style="color:blue">{{ forloop.counter}}:{{ hero.showname }}</li>
+            {% else %}
+                <li style="color:red">{{ forloop.counter}}:{{ hero.showname }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>

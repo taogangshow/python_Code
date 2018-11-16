@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>call和apply</title>
+	<script type="text/javascript">
+
+		function aa(a,b){
+			alert('我的this是:'+this+',我的a是'+a+',我的b是'+b)
+		}
+
+		// aa(2,3); 弹出我的this是 window 我的a是2，我的b是3
+
+		aa.call('abc',2,3) //弹出我的this是 abc 我的a是2，我的b是3
+
+		aa.apply('abc',[2,3]) //弹出this是 abc 我的a是2，我的b是3
+
+		// call 和 apply 功能一样 都是改变当前this指向对象，用法不一样 apply的第二个参数要用数组表示 而call就随便写
+
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

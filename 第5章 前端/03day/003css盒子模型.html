@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css 盒子模型</title>
+	<style type="text/css">
+	
+		.box{
+			width:200px;
+			height:100px;
+			background-color: gold;
+			
+			/*设置顶部边框的粗细,颜色和风格为实线*/
+			/*border-top-width: 10px;
+			border-top-color: #000;*/
+			/*border-top-style: solid;*/
+			
+			/*将上面的简写*/
+			/*实线:solid 虚线:dashed; 点线:dotted;*/
+			/*border-top:10px solid #000;
+			border-left: 10px dashed #000;
+			border-right: 10px dotted #000;
+			border-bottom:10px solid #000;*/
+			
+			border:10px solid #000;
+			
+			/*padding-top: 20px;
+			padding-left: 40px;
+			padding-right: 100px;
+			padding-bottom: 200px;*/
+			
+			/*用顺时针转12点方向第一个为top值*/
+			/*分别设置 上   右    下    左
+			padding: 20px 100px 200px 40px;
+			*/
+			
+			/*分别设置 上20px 左右100px  下200px
+			padding: 20px 100px 200px;
+			*/
+			
+			/*分别设置 上下20px 左右100px
+			padding: 20px 100px
+			*/
+			
+			/*同时设置四个边的值*/
+		    padding: 100px;
+
+
+			/*当有两个盒子的时候如果都同时设置了margin-top和margin-bottom那么两个盒子的合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者*/
+			/*一般开发遇到垂直外边距相遇的时候只设置margin-top，这样就可以避免外边距合并，就可以控制距离了*/
+		    
+		    /*外边距和内边距不要搞混了，外边距指盒子外边框到页面边框的距离，内边距是指盒子里面的内容到盒子边框的距离*/
+
+
+		    /*margin-top: 50px;
+		    margin-left: 100px;
+		    margin-right: 200px;
+		    margin-bottom: 300px; 
+			*/
+
+			/*分别设置 上   右    下    左 margin值
+			margin:50px 200px 300px 100px;
+			*/
+
+			/*分别设置 上20px 左右100px  下200px margin值
+			margin: 20px 100px 200px;
+			*/
+			
+			/*分别设置 上下20px 左右100px margin值
+			margin: 20px 100px
+			*/
+
+			/*同时设置四个边的值
+			margin:100px;
+		    */
+
+		    /*
+			  让盒子水平居中
+		    */
+		    margin:100px auto;
+
+
+
+
+
+		}
+
+	</style>
+</head>
+<body>
+	<!-- div可以说是一个标签，一个元素，一个盒子 -->
+	<div class="box">元素在页面中显示成一个方块，类似一个盒子，CSS盒子模型就是使用现实中盒子来做比喻，帮助我们设置元素对应的样式。盒子模型示意图如下</div>
+	<div class="box">元素在页面中显示成一个方块，类似一个盒子，CSS盒子模型就是使用现实中盒子来做比喻，帮助我们设置元素对应的样式。盒子模型示意图如下</div>
+	
+</body>
+</html>

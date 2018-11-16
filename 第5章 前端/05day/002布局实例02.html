@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>课后练习</title>
+	<style type="text/css">
+		.news_list_con{
+			width: 600px;
+			height: 290px;
+			border:1px solid #ddd;
+			margin:50px auto 0;
+			/*设置元素溢出*/
+			overflow: hidden;
+		}
+		.news_list_con h3{
+			width: 560px;
+			height: 50px;
+			border-bottom:1px solid #ddd;
+			/*去掉h3标签自带的margin样式并居中*/
+			margin: 0px auto;
+		}
+		.news_list_con h3 span{
+			/*display: inline-block;*/
+			float: left;
+			height: 50px;
+			/*font:字体大小/行高  所以不用写line-height:50px*/
+			font:18px/50px 'Microsoft Yahei';
+			font-weight: bold;
+			color: #000;
+			border-bottom: 2px solid red;
+			padding: 0px 15px;
+			/*因为span标签下的height为52px 大于了父级h3中的height50px，为了避免有些浏览器不兼容将多余的红线裁掉，使用相对定位*/
+			position: relative;
+		}
+		.news_list_con h3 a{
+			float: right;
+			/*这里我们的更多这个按钮不垂直居中让它往下靠一点，一般的网站都是这样做，所以我们将行高设置低一点从50px编程14px，再使用margin-top 25px往下撑*/
+			/*font:14px/50px 'Microsoft Yahei';*/
+			font:14px/14px 'Microsoft Yahei';
+			color: #808080;
+			text-decoration: none;
+			margin-top: 25px;
+		}
+		.news_list_con h3 a:hover{
+			color: red;
+		}
+		.news_list_con ul{
+			list-style: none;
+			/*去掉ul标签自带的padding*/
+			padding: 0;
+			width: 560px;
+			/*290-52*/
+			height: 238px;
+			/*最后一条新闻列表的线多出来不好看，我们设置margin的上下值为10px 让它溢出div，再在父级设置元素溢出overflow: hidden*/
+			margin:10px auto;
+			
+		}
+		.news_list_con ul li{
+			/*总的ul盒子的height为238px 一共有六条新闻那么每条新闻的高度就是 238/6=39px
+			但是因为每条新闻的下面有一条线，所以每一条li设置的height再-1=38px
+			*/
+			height: 38px;
+			border-bottom: 1px solid #f0f0f0;
+			background:url(images/dot.gif) left center no-repeat;
+		}
+		.news_list_con ul a{
+			text-decoration: none;
+			float: left;
+			height: 38px;
+			font:14px/38px 'Microsoft Yahei';
+			color: #000;
+			/*首行缩进把·(dot.gif)显示出来*/
+			text-indent: 30px;
+			/*将图标作为背景插进来*/
+			background: url(images/icon.jpg) 6px center no-repeat;
+		}
+		.news_list_con ul span{
+			float: right;
+			height: 38px;
+			font:14px/38px 'Microsoft Yahei';
+			color: #000;
+
+		}
+		/*设置每条新闻前面的·在元素之前before
+		.news_list_con ul a:before{
+			content: "· ";
+		}*/
+		.news_list_con ul a:hover{
+			color: #b22222
+		}
+	</style>
+</head>
+<body>
+	<div class="news_list_con">
+		<h3><span>新闻列表</span><a href="">更多&gt;&gt;</a></h3>
+		<ul>
+			<li><a href="">崔龙洙解苏宁因何打动他 要以学习的姿态去中超</a><span>2018-9-17</span></li>
+			<li><a href="">崔龙洙首尔告别战率队2-1胜 赛后向球迷挥手作别</a><span>2018-9-17</span></li>
+			<li><a href="">曝国安苏宁争抢比甲铜靴 意大利国脚身价650万欧</a><span>2018-9-17</span></li>
+			<li><a href="">崔龙洙或将现场看苏宁战恒大 称被球队诚意打动</a><span>2018-9-17</span></li>
+			<li><a href="">中超转会汇总(更新中) 国内足球招实习兼职编辑</a><span>2018-9-17</span></li>
+			<li><a href="">永昌官宣法国高中锋加盟 联赛28场15球曾战欧冠</a><span>2018-9-17</span></li>
+		</ul>
+	</div>
+</body>
+</html>

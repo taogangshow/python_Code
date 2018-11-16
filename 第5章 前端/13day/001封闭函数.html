@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>封闭函数</title>
+	<script type="text/javascript">
+		var aa = function(){
+			alert("test01");
+		};
+
+		aa();
+
+		// 在封闭函数里面定义的变量aa 不会影响到全局变量aa
+		// 切记每个函数之间的花括号后面加个分好 因为代码会被压缩
+		// 一般通过外联式引入的js 里面的封闭函数前面会加个;  例如;(function(){})();
+		(function(){
+			var aa = function(){
+				alert("test02")
+			}
+			aa();
+		})();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

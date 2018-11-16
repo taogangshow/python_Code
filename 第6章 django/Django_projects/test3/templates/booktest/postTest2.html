@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+    <div>
+        用户名:{{username}}<br/>
+        密码:{{pwd}}<br/>
+        性别:{{gender}}<br/>
+        爱好:
+        {%for s in like%}
+        {{s}}
+        {%endfor%}<br/>
+        籍贯:{{site}}<br/>
+        个人描述:{{info}}
+    </div>    
+</body>
+</html>

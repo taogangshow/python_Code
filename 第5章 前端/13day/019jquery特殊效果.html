@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery 特殊效果</title>
+	<!-- fadeIn() 淡入
+
+    $btn.click(function(){
+
+        $('#div1').fadeIn(1000,'swing',function(){
+            alert('done!');
+        });
+
+    });
+
+	fadeOut() 淡出
+	fadeToggle() 切换淡入淡出
+	hide() 隐藏元素
+	show() 显示元素
+	toggle() 依次展示或隐藏某个元素
+	slideDown() 向下展开
+	slideUp() 向上卷起
+	slideToggle() 依次展开或卷起某个元素 -->
+</head>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#btn').click(function() {
+			// 淡出
+			// $('.box').fadeOut();
+
+			// 淡入 淡出
+			// $('.box').fadeToggle();
+
+			// 显示和隐藏
+			// $('.box').toggle();
+
+			$('.box').slideToggle();
+		});
+	})
+</script>
+<style type="text/css">
+	.box{
+		width:200px;
+		height:200px;
+		background-color:gold;
+	}
+</style>
+<body>
+	<input type="button" name="" value="效果" id="btn">
+	<div class="box"></div>
+</body>
+</html>

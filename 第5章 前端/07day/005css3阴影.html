@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css3 阴影</title>
+	<style type="text/css">
+		.box{
+			width:200px;
+			height:40px;
+			background-color:gold;
+			margin:100px auto 0;
+			/*box-shadow：h-shadow v-shadow blur spread color inset;
+			分别设置阴影：水平偏移 垂直偏移 羽化大小 扩展大小 颜色 是否内阴影*/
+
+			/*外置阴影*/
+			box-shadow:10px  10px 10px 0 #ddd;
+		}
+		.box2{
+			width:200px;
+			height:40px;
+			background-color:gold;
+			margin:100px auto 0;
+			/*渐变效果  内置阴影*/
+			box-shadow:0px 0px 20px 2px red inset;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="box2"></div>
+</body>
+</html>

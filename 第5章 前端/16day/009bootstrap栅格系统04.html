@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>bootstrap 容器----偏移</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<style type="text/css">
+		div[class*='col-']{
+			background-color:gold;
+			border:1px solid #000;
+			height:60px;
+		}
+	</style>
+</head>
+<body>
+	<!-- 栅格嵌套 -->
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-2">1</div>
+			<!-- 设置偏移 第2，3 div 偏移2 和3  第一个div原地不偏移 所以不设置 -->
+			<div class="col-lg-2 col-lg-offset-2">2</div>
+			<div class="col-lg-2 col-lg-offset-3">3</div>
+
+			<!-- 
+			<div class="col-lg-2 col-md-3">1</div>
+			<div class="col-lg-2 col-md-3 col-lg-offset-2 col-md-offset-1">2</div>
+			<div class="col-lg-2 col-md-3 col-lg-offset-3 col-md-offset-2">3</div>	
+			 -->
+
+
+		</div>
+	</div>
+</body>
+</html>

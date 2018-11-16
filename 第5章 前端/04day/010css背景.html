@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>背景</title>
+	<!-- background属性
+	属性解释 
+	background属性是css中应用比较多，且比较重要的一个属性，它是负责给盒子设置背景图片和背景颜色的，background是一个复合属性，它可以分解成如下几个设置项：
+
+	background-color 设置背景颜色
+	background-image 设置背景图片地址
+	background-repeat 设置背景图片如何重复平铺
+	background-position 设置背景图片的位置
+	background-attachment 设置背景图片是固定还是随着页面滚动条滚动 -->
+	<style type="text/css">
+		.box{
+			width: 320px;
+			height: 160px;
+			margin-bottom: 50px;
+			background-color: gold;
+			background-image:url(images/bg.jpg);
+			border:5px solid #000;
+			font-size: 40px;
+			color: red;
+
+		}
+		.box2{
+			width: 320px;
+			height: 160px;
+			margin-bottom: 50px;
+			background-color: gold;
+			border:5px solid #000;
+			font-size: 40px;
+			color: red;
+		}
+
+		.box3{
+			width: 320px;
+			height: 160px;
+			margin-bottom: 50px;
+			border:5px solid #000;
+			/*background-color: gold;
+			
+			background-image:url(images/bg.jpg);*/
+			/*设置背景图片如何重复平铺---默认是repeat重复平铺
+			background-repeat: repeat;*/
+
+			/*横向重复平铺
+			background-repeat: repeat-x;
+			*/
+
+			/*纵向重复平铺
+			background-repeat: repeat-y;
+			*/
+
+			/*不重复平铺
+			background-repeat: no-repeat;*/
+
+			/*设置背景图片的位置 ----要设置背景图片方位就必要让背景图片不重复平铺，不然没任何作用
+			background-position: left center;*/
+
+			/*background-position: center;
+
+			background-position: left bottom;*/
+
+			/*使用像素来设置图片位置----以左上角为中心
+			background-position: 0px 0px;
+
+			background-position: 50px 20px;*/
+
+			/*设置负值表示像反方向拉----向左向上
+			background-position: -20px -10px;*/
+
+			/*将上面的语句简写成一句话*/
+			background: url(images/bg.jpg) -20px -10px  no-repeat gold;
+
+
+		}
+
+		.box4{
+			width: 100px;
+			height: 100px;
+			border:5px solid #000;
+			margin-bottom: 50px;
+			/*background-image: url(images/location_bg.jpg);
+			background-repeat: no-repeat;
+			background-position: -110px -150px;*/
+
+			/*将上面的语句简写成一句话*/
+			background: url(images/location_bg.jpg) -110px -150px no-repeat;
+
+		}
+	</style>
+</head>
+<body>
+	<!-- 使用background-image 设置背景图片地址 -->
+	<!-- 这种是不占用空间的文字在背景的上面 -->
+	<!-- 作为背景 -->
+	<div class="box">背景图片</div>
+	<!-- 使用img标签来插入背景图片 -->
+	<!-- 这种占用空间并且文字和背景图片是并列的 -->
+	<!-- 作为内容 -->
+	<div class="box2"><img src="images/bg.jpg">背景图片</div>
+
+	<div class="box3"></div>
+
+	<div class="box4"></div>
+	
+</body>
+</html>

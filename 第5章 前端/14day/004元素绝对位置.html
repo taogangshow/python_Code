@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>元素 绝对位置</title>
+	<!-- 
+	1、获取和设置元素的尺寸
+
+	width()、height()    获取元素width和height  
+	innerWidth()、innerHeight()  包括padding的width和height  
+	outerWidth()、outerHeight()  包括padding和border的width和height  
+	outerWidth(true)、outerHeight(true)   包括padding和border以及margin的width和height
+	2、获取元素相对页面的绝对位置
+
+	offset()
+	 -->
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var $pos = $('.pos')
+			var pos = $pos.offset();
+			var w = $pos.outerWidth();
+			var t = $pos.outerHeight();
+			// console.log(pos) 
+
+			// alert(pos.left); 弹出508的宽度 因为body有8像素的margin
+
+			// document.title = pos.left + ' | ' + pos.top;
+
+			$('.pop').css({left:pos.left+w,top:pos.top})
+
+			// 鼠标事件
+			$pos.mouseover(function() {
+				$('.pop').show();
+			});
+
+			$pos.mouseout(function() {
+				$('.pop').hide();
+			});
+
+
+		})
+	</script>
+	<style type="text/css">
+	.con{
+		width:600px;
+		height:600px;
+		margin:50px auto 0;
+	}
+	.box{
+		width:100px;
+		height:100px;
+		background-color:gold;
+		margin-bottom:10px;
+	}
+	.pos{
+		margin-left:500px;
+	}
+	.pop{
+		width:100px;
+		height:100px;
+		background-color:red;
+		position:fixed;
+		left:0;
+		top:0;
+		display:none;
+	}
+</style>
+</head>
+<body>
+	<div class="con">
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box pos"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	</div>
+
+	<div class="pop">提示信息！</div>
+</body>
+</html>

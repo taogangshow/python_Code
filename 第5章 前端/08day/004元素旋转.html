@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>三维旋转</title>
+	<!-- rotateX、rotateY、rotateZ 设置三维旋转 -->
+	<style type="text/css">
+	/*  旋转方向判断
+			
+			1、x轴向右、y轴向下、z轴向屏幕外
+
+			2、让轴向对着自己，顺时针方向就是该轴向的旋转方向
+
+
+		   */
+		.box{
+			width:300px;
+			height:300px;
+			background-color:gold;
+			margin:50px auto 0;
+			transition:all 500ms ease;
+			/*设置盒子是否按3d空间显示*/
+			transform-style:preserve-3d;
+			/*解决跳变bug，设置初始旋转值为0*/
+			transform:perspective(800px) rotateY(0deg)
+		}
+		.box:hover{
+			/* Z轴旋转
+			transform:rotate(45deg);*/
+
+			/*Y轴旋转 透视距离800px是最接近人眼的*/
+			transform:perspective(800px) rotateY(45deg)
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

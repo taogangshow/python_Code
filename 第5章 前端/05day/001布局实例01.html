@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片列表</title>
+	<style type="text/css">
+		/*将样式初始化*/
+		body,ul,h3{
+			padding:0;
+			margin:0;
+		}
+		ul{
+			list-style: none;
+		}
+		.clearfix:before,.clearfix:after{
+			content: "";
+			display: table;
+		}
+		.clearfix:after{
+			clear: both;
+		}
+		.clearfix{
+			zoom: 1;
+		}
+		.goods_list{
+			width: 958px;
+			border:1px solid #ddd;
+			margin:50px auto 0;
+			overflow: hidden;
+		}
+		.goods_list h3{
+			width: 918px;
+			height: 50px;
+			border-bottom:1px solid #ddd;
+			margin:0px auto;
+		}
+		.goods_list span{
+			display: inline-block;
+			height: 50px;
+			font:18px/50px 'Microsoft Yahei';
+			color: #000;
+			font-weight: bold;
+			border-bottom: 2px solid red;
+			padding: 0 15px;
+		}
+		.goods_list ul{
+			width: 950px;
+		/*	background-color: blue; ---for test
+			居中 或者是margin:0 auto;
+			margin-left: 20px;
+			向下排20px
+			margin-top: 20px;
+			设置完了最后发现下面li离边框的距离是38px  即设置margin-bottom=38-25=13px
+			margin-bottom: 13px;*/
+
+			/*将上面的简写*/
+			margin:20px 0 13px 20px;
+
+		}
+		.goods_list ul li{
+			/*li是属于块元素，所以可以支持全部样式*/
+			width: 160px;
+			height: 68px;
+			float: left;
+			margin:0 29px 25px 0;
+			/*经过上面的margin设置导致li的width比父级ul的宽，即每行拍不了5个li会导致换行，有个小技巧就是将父级的ul width设置大一些950px,然后在进行清除浮动overflow:hidden;
+			*/
+
+		}
+	</style>
+</head>
+<body>
+	<h2 style="text-align: center;">4.特征布局：图片列表（所需知识点：盒模型、浮动）</h2>
+	<div class="goods_list">
+		<h3><span>图片展示</span></h3>
+		<ul class="clearfix">
+			<li><a href=""><img src="images/goods.jpg" alt="商品图片"></a></li>
+			<li><a href=""><img src="images/goods.jpg" alt="商品图片"></a></li>
+			<li><a href=""><img src="images/goods.jpg" alt="商品图片"></a></li>
+			<li><a href=""><img src="images/goods.jpg" alt="商品图片"></a></li>
+			<li><a href=""><img src="images/goods.jpg" alt="商品图片"></a></li>
+			<li><a href=""><img src="images/goods.jpg" alt="商品图片"></a></li>
+			<li><a href=""><img src="images/goods.jpg" alt="商品图片"></a></li>
+			<li><a href=""><img src="images/goods.jpg" alt="商品图片"></a></li>
+			<li><a href=""><img src="images/goods.jpg" alt="商品图片"></a></li>
+			<li><a href=""><img src="images/goods.jpg" alt="商品图片"></a></li>
+		</ul>
+	</div>
+</body>
+</html>

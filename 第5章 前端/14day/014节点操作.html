@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>节点操作</title>
+	<!-- 
+	jquery元素节点操作
+	创建节点
+
+	var $div = $('<div>');
+	var $div2 = $('<div>这是一个div元素</div>');
+	插入节点 
+	1、append()和appendTo()：在现存元素的内部，从后面插入元素
+
+	var $span = $('<span>这是一个span元素</span>');
+	$('#div1').append($span);
+	......
+	<div id="div1"></div>
+	2、prepend()和prependTo()：在现存元素的内部，从前面插入元素
+
+	3、after()和insertAfter()：在现存元素的外部，从后面插入元素
+
+	4、before()和insertBefore()：在现存元素的外部，从前面插入元素
+
+	删除节点
+
+	$('#div1').remove(); -->
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// 创建节点
+			var $span = $('<span>span元素</span>');
+			var $p = $('<p>P段落元素</p>');
+			var $h = $('<h1>页面标题</h1>');
+
+			// 插入节点 
+			// $('#div1').append($span);
+			// $('#div1').append($p);
+
+			// 反着写 倒过来写  效果都一样
+			$span.appendTo('#div1');
+			$p.appendTo('#div1');
+
+
+			// 在现存元素的外部，从前面插入元素
+			// $('#div1').before($h);
+
+			// 反着写 倒过来写  效果都一样
+			$h.insertBefore('#div1');
+
+
+			// 删除p节点
+			$p.remove();
+		})
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+</body>
+</html>

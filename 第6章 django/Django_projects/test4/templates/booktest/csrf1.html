@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+		label{
+			display:inline-flex;
+			width:50px;
+			height:30px;
+		}
+		#uname,#upwd{
+			height:16px;
+		}
+		.box2{
+			margin-top:6px;
+		}
+		.box3{
+			margin-top:15px;
+			position:absolute;
+			left:146px;
+		}
+	</style>
+</head>
+<body>
+<form action="csrf2" method="post">
+    {# 这个标签用于跨站请求伪造保护 #}
+    {% csrf_token %}
+    <div class="box1">
+        <label for="uname">用户名</label>
+        <input type="text" name="uname" id="uname">
+    </div>
+    <div class="box2">
+        <label for="upwd">密码</label>
+        <input type="password" name="upwd" id="upwd">
+    </div>
+    <div class="box3">
+        <input type="submit" name="" value="登录">
+        <input type="reset" name="" value="重置">
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数return关键字</title>
+
+	<!-- 
+	函数'return'关键字 
+	函数中'return'关键字的作用：
+	1、返回函数执行的结果
+	2、结束函数的运行
+	3、阻止默认行为 -->
+
+	<script type="text/javascript">
+		window.onload = function(){
+			var oInput01 = document.getElementById('input01');
+			var oInput02 = document.getElementById('input02');
+			var oBtn = document.getElementById('btn');
+
+			/*
+			写入值
+			oInput01.value = 10;
+			oInput02.value = 6;
+			*/
+
+			oBtn.onclick = function(){
+				var val01 = oInput01.value;
+				var val02 = oInput02.value;
+				// alert(val01); 
+
+				// 调用匿名函数
+				var rs = add(val01,val02);
+				alert(rs);
+			}
+
+			function add(a,b){
+				// 这里的+会将a和b当错字符串相加 而不是数字相加,因为在js里面+有连接字符串作用
+				// 需使用parseInt将a定义为数字 
+				var c = parseInt(a) + parseInt(b);
+
+				alert('计算完成')
+
+				return c;
+
+				// return;
+
+				// 如果将return放在alert的前面那么  alert将不会被执行 因为return还有结束函数的作用
+				// 所以有时候会出现 return;
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="" name="" id="input01">
+	<input type="" name="" id="input02">
+	<input type="button" name="" value="相加" id="btn">
+</body>
+</html>

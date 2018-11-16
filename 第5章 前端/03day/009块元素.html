@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>块元素</title>
+
+	<!-- 块元素 
+	块元素，也可以称为行元素，布局中常用的标签如：div、p、ul、li、h1~h6、dl、dt、dd等等都是块元素，它在布局中的行为：
+
+	支持全部的样式
+	如果没有设置宽度，默认的宽度为父级宽度100%
+	盒子占据一行、即使设置了宽度 -->
+	
+	<style type="text/css">
+		body{
+			margin:0px;
+		}
+		div{
+			background-color: yellow;
+			text-align: center;
+			/*上下是10px 左右是0px*/
+			margin:10px 0;
+		}
+		.box2{
+			width: 200px;
+			height: 60px;
+		}
+		.box3{
+			widows: 300px;
+		}
+	</style>
+</head>
+<body>
+	<div>这是第一个div元素</div>
+	<div class="box2">这是第一个div元素</div>
+	<div class="box3">这是第一个div元素</div>
+	
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>布局实例</title>
+	<style type="text/css">
+		.pagenation{
+			width: 958px;
+			height: 40px;
+			border:1px solid #000;
+			margin:50px auto 0;
+			text-align: center;
+			font-size: 0px;
+
+		}
+		.pagenation a{
+			display: inline-block;
+			font-size: 12px;
+			font-family: 'Microsoft Yahei';
+			color: #000;
+			background-color: gold;
+			padding: 5px 10px;
+			text-decoration: none;
+			/*因为设置了padding使用line-height居中会撑开boder盒子的，即使用下面的方式手工设置*/
+			/*计算居中的margin上下的值 (40-12-5*2)=18 那么上下的值就是18/2=9*/
+			margin:8px 5px;
+		}
+		.pagenation a:hover{
+			background-color: red;
+			color: white;
+		}
+		.pagenation span{
+			display: inline-block;
+			font-size: 12px;
+		}
+		/***************************************************************************************/
+		
+		.menu{
+			width: 958px;
+			height: 40px;
+			border:1px solid #000;
+			margin:50px auto 0;
+			/*因为ul标签会自带padding，所以需要给它干掉*/
+			padding: 0;
+			list-style: none;
+			text-align: center;
+			line-height: 40px;
+			font-size: 0;
+		}
+
+		.menu li{
+			display: inline-block;
+			font-size: 14px;
+		}
+		.menu li a{
+			text-decoration: none;
+			font-family: 'Microsoft Yahei';
+			color: #333;
+		}
+		.menu .line{
+			/*给margin和padding都行  上下给0 左右给20px*/
+			margin:0 20px;
+		}
+
+		.menu li a:hover{
+			color: red;
+		}
+		/***************************************************************************************/
+
+		.menu2{
+			width: 960px;
+			height: 40px;
+			background-color: #55a8ea;
+			list-style: none;
+			margin:50px auto 0;
+			padding: 0;
+			/*将父级设置为相对*/
+			position:relative;
+			
+		}
+		.menu2 li{
+			float: left;
+			width: 100px;
+			height: 40px;
+			text-align: center;
+			line-height: 40px;
+
+
+		}
+		.menu2 li a{
+			text-decoration: none;
+			font-size: 14px;
+			font-family: 'Microsoft Yahei';
+			color: #fff;
+		}
+		.menu2 .active{
+			background-color: #00619f;
+		}
+		.menu2 li:hover{
+			background-color: #00619f;
+		}
+		.menu2 .new{
+			width: 33px;
+			height: 20px;
+			background: url(images/new.png) no-repeat;
+			position: absolute;
+			left:433px;
+			top:-9px;
+		}
+		.menu2 .new:hover{
+			background:url(images/new.png) no-repeat;
+		}
+		/***************************************************************************************/
+
+		.news_list_con{
+			width: 600px;
+			height: 290px;
+			border:1px solid #ddd;
+			margin:50px auto 0;
+			/*设置元素溢出*/
+			overflow: hidden;
+		}
+		.news_list_con h3{
+			width: 560px;
+			height: 50px;
+			border-bottom:1px solid #ddd;
+			/*去掉h3标签自带的margin样式并居中*/
+			margin: 0px auto;
+		}
+		.news_list_con h3 span{
+			display: inline-block;
+			height: 50px;
+			/*font:字体大小/行高  所以不用写line-height:50px*/
+			font:18px/50px 'Microsoft Yahei';
+			font-weight: bold;
+			color: #000;
+			border-bottom: 2px solid red;
+			padding: 0px 15px;
+			/*因为span标签下的height为52px 大于了父级h3中的height50px，为了避免有些浏览器不兼容将多余的红线裁掉，使用相对定位*/
+			position: relative;
+		}
+		.news_list_con ul{
+			list-style: none;
+			/*去掉ul标签自带的padding*/
+			padding: 0;
+			width: 560px;
+			/*290-52*/
+			height: 238px;
+			/*最后一条新闻列表的线多出来不好看，我们设置margin的上下值为10px 让它溢出div，再在父级设置元素溢出overflow: hidden*/
+			margin:10px auto;
+			
+		}
+		.news_list_con ul li{
+			/*总的ul盒子的height为238px 一共有六条新闻那么每条新闻的高度就是 238/6=39px
+			但是因为每条新闻的下面有一条线，所以每一条li设置的height再-1=38px
+			*/
+			height: 38px;
+			border-bottom: 1px solid #f0f0f0
+		}
+		.news_list_con ul a{
+			text-decoration: none;
+			float: left;
+			height: 38px;
+			font:14px/38px 'Microsoft Yahei';
+			color: #000;
+		}
+		.news_list_con ul span{
+			float: right;
+			height: 38px;
+			font:14px/38px 'Microsoft Yahei';
+			color: #000;
+
+		}
+		/*设置每条新闻前面的·在元素之前before*/
+		.news_list_con ul a:before{
+			content: "· ";
+		}
+		.news_list_con ul a:hover{
+			color: #b22222
+		}
+
+	</style>
+</head>
+<body>
+	<h2 style="text-align: center;">1.特征布局：翻页（所需知识点：盒模型、内联元素）</h2>
+	<div class="pagenation">
+		<a href="">上一页</a>
+		<a href="">1</a>
+		<a href="">2</a>
+		<a href="">3</a>
+		<a href="">4</a>
+		<span>...</span>
+		<a href="">17</a>
+		<a href="">18</a>
+		<a href="">19</a>
+		<a href="">20</a>
+		<a href="">下一页</a>
+	</div>
+	<br>
+	<h2 style="text-align: center;">2.特征布局：导航条01（所需知识点：盒模型、行内元素布局）</h2>
+	<ul class="menu">
+		<li><a href="">首 页</a></li>
+		<li class="line">丨</li>
+		<li><a href="">网站建设</a></li>
+		<li class="line">丨</li>
+		<li><a href="">程序开发</a></li>
+		<li class="line">丨</li>
+		<li><a href="">网络营销</a></li>
+		<li class="line">丨</li>
+		<li><a href="">企业VI</a></li>
+		<li class="line">丨</li>
+		<li><a href="">案列展示</a></li>
+		<li class="line">丨</li>
+		<li><a href="">联系我们</a></li>
+	</ul>
+	<br>
+	<h2 style="text-align: center;">3.特征布局：导航条02（所需知识点：盒模型、浮动、定位、字体对齐）</h2>
+	<ul class="menu2">
+		<li class="active"><a href="">首 页</a></li>
+		<li><a href="">网站建设</a></li>
+		<li><a href="">程序开发</a></li>
+		<li><a href="">网络营销</a></li>
+		<li><a href="">企业VI</a></li>
+		<li><a href="">案列展示</a></li>
+		<li><a href="">联系我们</a></li>
+		<li class="new"></li>
+	</ul>
+	<br>
+	<h2 style="text-align: center;">5.特征布局：新闻列表（所需知识点：盒模型、浮动）</h2>
+	<div class="news_list_con">
+		<h3><span>新闻列表</span></h3>
+		<ul>
+			<li><a href="">崔龙洙解苏宁因何打动他 要以学习的姿态去中超</a><span>2016-6-23</span></li>
+			<li><a href="">崔龙洙首尔告别战率队2-1胜 赛后向球迷挥手作别</a><span>2016-6-23</span></li>
+			<li><a href="">曝国安苏宁争抢比甲铜靴 意大利国脚身价650万欧</a><span>2016-6-23</span></li>
+			<li><a href="">崔龙洙或将现场看苏宁战恒大 称被球队诚意打动</a><span>2016-6-23</span></li>
+			<li><a href="">中超转会汇总(更新中) 国内足球招实习兼职编辑</a><span>2016-6-23</span></li>
+			<li><a href="">永昌官宣法国高中锋加盟 联赛28场15球曾战欧冠</a><span>2016-6-23</span></li>
+		</ul>
+	</div>
+</body>
+</html>

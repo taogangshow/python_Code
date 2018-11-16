@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+<body>
+    <form action="verifyTest2" method="post">
+         {% csrf_token %}
+        <div class="box1">
+            <label for="code1">验证码</label>
+            <input type="text" name="code1">
+        </div>
+        <div class="box2">
+            <img src="verifyCode">
+        </div>
+        <div class="box3">
+            <input type="submit" value="测试">
+            <input type="reset" name="" value="重置">
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>响应式布局</title>
+	<!-- 响应式布局
+	响应式布局就是使用媒体查询的方式，通过查询浏览器宽度，不同的宽度应用不同的样式块，每个样式块对应的是该宽度下的布局方式，从而实现响应式布局。响应式布局的页面可以适配多种终端屏幕（pc、平板、手机）。 -->
+	<style type="text/css">
+		body,ul{
+			padding:0;
+			margin:0;
+		}
+		ul{
+			list-style:none;
+		}
+		.con{
+			border:1px solid #000;
+			overflow:hidden;
+		}
+		.con li{
+			width:23%;
+			height:200px;
+			background-color:gold;
+			float:left;
+			margin:30px 1%;
+		}
+		/*解释:当宽度小于800px时候 那么con下的li就按照这个方式排列 即就可以达到当缩小浏览器窗口小于800px时，每行li排列两个*/
+		@media (max-width:800px){
+			.con li{
+			width:46%;
+			margin:30px 2%;
+		}
+		}
+		/*跟上面解释一个原理 每当小于设定的最大宽度时，将覆盖每个li的宽度和margin*/
+		@media (max-width:500px){
+			.con li{
+			width:90%;
+			margin:30px 5%;
+		}
+		}
+	</style>
+</head>
+<body>
+	<ul class="con">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+	</div>
+</body>
+</html>

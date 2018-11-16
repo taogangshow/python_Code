@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包的用途01--存循环的索引值</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oLi = document.getElementsByTagName('li');
+
+			
+				for(var i=0;i<oLi.length;i++){
+					/*
+					使用这种的话每点击一个li元素 都弹出8
+					oLi[i].onclick = function(){
+						alert(i);
+					}
+					*/
+
+					// 使用简写闭包  第一个作用 存索引值
+
+					(function(i){
+						oLi[i].onclick = function(){
+						alert(i);
+						}
+					})(i);
+				}
+			
+		}
+	</script>
+	<style type="text/css">
+		li{
+			height:30px;
+			margin-top:10px;
+			background-color:gold;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+	</ul>
+</body>
+</html>

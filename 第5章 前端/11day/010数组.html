@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组</title>
+	<script type="text/javascript">
+
+		// 建议使用第二种 性能更高
+
+		//第一种创建数组的方式:对象的实例创建
+		var aRr01 = new Array(1,2,3,'abc');
+		//第二种创建数组的方式:直接量创建
+		var aRr02 = [4,5,6,'def'] 
+
+		// 定义二维数组
+		var aRr03 = [[1,2,3],['e,r,f'],['blue','gold'],[true,false]]
+		// 获取数组的成员数量
+		alert(aRr02.length);//弹出4
+
+		alert(aRr01[2]);  //弹出3
+
+		alert(aRr03.length); //弹出4
+
+		alert(aRr03[3]); //弹出[true,false]
+
+		alert(aRr03[3][1]); //弹出false
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

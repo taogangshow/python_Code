@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表格</title>
+</head>
+<body>
+	<!-- 复习 -->
+	<!-- table>(tr>td*4)*4 -->
+	<table border="1" width="800" height="500">
+		<tr>
+			<!-- 合并要删除对应合并的格子 -->
+			<th valign="top" colspan="2">1</th>
+			<!-- <th>2</th> -->
+			<th>3</th>
+			<th>4</th>
+		</tr>
+		<tr>
+			<td align="center" rowspan="2">文字</td>
+			<td>文字</td>
+			<td>文字</td>
+			<td>文字</td>
+		</tr>
+		<tr>
+			<!-- <td>文字</td> -->
+			<td>文字</td>
+			<td>文字</td>
+			<td>文字</td>
+		</tr>
+		<tr>
+			<td colspan="4">文字</td>
+			<!-- <td>文字</td>
+			<td>文字</td>
+			<td>文字</td> -->
+		</tr>
+	</table>
+</body>
+</html>

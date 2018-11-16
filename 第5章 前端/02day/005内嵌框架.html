@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>内嵌框架</title>
+</head>
+<body>
+	<!-- target属性等于iframe标签下的name属性，这样才能达到在内嵌框架下跳转至网站 -->
+	<a href="https://www.baidu.com" target="myframe">百度网</a>
+	<a href="http://www.itcast.cn" target="myframe">传智网</a>
+	<a href="https://www.qq.com" target="myframe">腾讯网</a><br />
+	<!-- iframe标签会创建包含另外一个html文件的内联框架 -->
+	<!--  frameborder="0"不显示窗口边框-->
+	<!--scrolling="no" 窗口滚动条不显示  -->
+	<iframe src="https://www.baidu.com/" width="900" height="500" frameborder="0"
+    scrolling="no" name="myframe"></iframe>
+	
+	<iframe src="001列表.html"  width="900" height="500" frameborder="0"
+    scrolling="no"></iframe>
+	
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取地址栏参数</title>
+	<!-- 内置对象
+		1、document
+
+		document.referrer  //获取上一个跳转页面的地址(需要服务器环境)
+		2、location
+
+		window.location.href  //获取或者重定url地址
+		window.location.search //获取地址参数部分
+		window.location.hash //获取页面锚点或者叫哈希值
+		3、Math
+
+		Math.random 获取0-1的随机数
+		Math.floor 向下取整
+		Math.ceil 向上取整 -->
+	<script type="text/javascript">
+		window.onload = function(){
+			var Dat = window.location.search;
+			var Span = document.getElementById('span01');
+
+			// file:///D:/Sublime%20Text%203/Sublime%20Text%203/Projects/12day/......html?name=taogang#12
+			var hash = window.location.hash;
+
+			alert(hash); //弹出#12
+
+
+
+			// 在地址栏后面输入?admin=123
+			// file:///D:/Sublime%20Text%203/Sublime%20Text%203/Projects/12day/......html?admin=123
+			// alert(Dat); 弹出?admin=123
+
+			// file:///D:/Sublime%20Text%203/Sublime%20Text%203/Projects/12day/......html?name=taogang
+			var arr = Dat.split('=');
+			// alert(arr); 弹出?name,taogang
+
+			var name = arr[1]
+			// alert(name); 弹出taogang
+
+			Span.innerHTML = name; //页面显示   欢迎taogang访问我的主页!
+
+
+		}
+		
+	</script>
+</head>
+<body>
+	<div>欢迎<span id="span01"></span>访问我的主页!</div>
+</body>
+</html>

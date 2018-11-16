@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 对选择集进行修饰过滤(类似CSS伪类)
+
+$('#ul1 li:first') //选择id为ul1元素下的第一个li
+$('#ul1 li:odd') //选择id为ul1元素下的li的奇数行
+$('#ul1 li:eq(2)') //选择id为ul1元素下的第3个li
+$('#ul1 li:gt(2)') // 选择id为ul1元素下的前三个之后的li
+$('#myForm :input') // 选择表单中的input元素
+$('div:visible') //选择可见的div元素
+对选择集进行函数过滤
+
+$('div').has('p'); // 选择包含p元素的div元素
+$('div').not('.myClass'); //选择class不等于myClass的div元素
+$('div').filter('.myClass'); //选择class等于myClass的div元素
+$('div').first(); //选择第1个div元素
+$('div').eq(5); //选择第6个div元素
+选择集转移
+
+$('div').prevAll('p'); //选择div元素前面的第一个p元素
+$('div').nextAll('p'); //选择div元素后面的第一个p元素
+$('div').closest('form'); //选择离div最近的那个form父元素
+$('div').parent(); //选择div的父元素
+$('div').children(); //选择div的所有子元素
+$('div').siblings(); //选择div的同级元素
+$('div').find('.myClass'); //选择div内的class等于myClass的元素 -->
+<head>
+	<meta charset="UTF-8">
+	<title>jquery 选择器02</title>
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+
+			// next() 同级的下一个元素，nextAll()同级的下面所有的元素 ,next() 是不能添加过滤元素的
+
+			// prev() 同级的上一个元素，prevAll()同级的上面所有的元素，prev() 是不能添加过滤元素的
+			
+			$('#div1').next().css({color:'red'});
+
+			// 过滤p标签
+			$('#div1').nextAll('p').css({color:'gold'});
+
+			//选择上一级的父元素
+			$('#span01').parent().css({width:'100px',height:'100px',background:'cyan'})
+
+			//选择离最近的元素，元素可以是父级，可以是子集
+			$('#span02').closest('div').css({width:'200px',height:'200px',background:'pink'})
+
+			
+			//选择list的所有子元素
+			$('.list').children().css({background:'gold',height:'30px',marginBottom:'10px'})
+
+			// $('.list li')：不能回到父级
+			// $('.list').children()：可以通过end() 回到父级
+			$('.list').children().css({background:'gold',height:'30px',marginBottom:'10px'}).end().css({background:'green'});
+			
+			//选择list2的同级元素
+			$('.list2 li:eq(2)').css({background:'gold'}).siblings().css({background:'green'});
+
+
+			//选择div2内的class等于link1的元素 -->
+			$('#div2').find('.link1').css({color:'red'});
+
+		})
+	</script>
+</head>
+<body>
+	<div id="div1">这是一个div元素</div>
+	<div>这是第二个div元素</div>
+	<p>这时一个P元素</p>
+
+	<div id="div2">
+		<a href="#" class="link1">百度网</a>
+		<span id="span01">这是第一个span元素</span>
+	</div>
+
+	<div>
+		<p>
+			<a href="#">腾讯网</a>
+			<span id="span02">这是第二个span元素</span>
+		</p>
+	</div>
+
+	<ul class="list">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+	</ul>
+
+	<ul class="list2">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>margin-top 塌陷</title>
+	<style type="text/css">
+		.con{
+			width: 300px;
+			height: 200px;
+			background-color: yellow;
+
+			/*
+			解决margin-top 塌陷方法如下:
+
+			1、外部盒子设置一个边框
+			2、外部盒子设置 overflow:hidden
+			3、使用伪元素类：
+
+			.clearfix:before{
+			    content: '';
+			    display:table;
+			}*/
+
+			/*第一种 解决margin-top塌陷的方式
+			border:1px solid yellow;
+			*/
+
+			/*第二种 解决margin-top塌陷的方式
+			overflow: hidden;
+			*/
+
+
+		}
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: green;
+			margin-top: 50px;
+
+		}
+		/*第二种 解决margin-top塌陷的方式*/
+		.clearfix:before{
+			content: "";
+			display: table;
+		}
+	</style>
+</head>
+<body>
+	<div class="con clearfix">
+		<div class="box"></div>
+	</div>
+	
+	
+</body>
+</html>

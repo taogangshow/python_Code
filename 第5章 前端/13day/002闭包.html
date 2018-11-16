@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包</title>
+	<script type="text/javascript">
+		/*
+		function aa(n){
+			var b = 3;
+
+			function bb(){
+				alert(n);
+				alert(b);
+			}
+			return bb;
+		}
+		var cc = aa(5);
+		cc();
+		*/
+
+		// 将上面的闭包 通过封闭函数简写
+
+		var cc = (function(n){
+			var b=3;
+			function bb(){
+				alert(n);
+				alert(b);
+			}
+			return bb;
+		})(5);
+
+		cc();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

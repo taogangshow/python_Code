@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>click 事件</title>
+	<!-- 操作样式类名
+		$("#div1").toggleClass("anotherClass") //重复切换anotherClass样式 -->
+	<!-- 绑定click事件
+	给元素绑定click事件，可以用如下方法：
+
+	$('#btn1').click(function(){
+
+	    // 内部的this指的是原生对象
+
+	    // 使用jquery对象用 $(this)
+
+}) -->
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#btn').click(function(){
+
+				$('.box').toggleClass('sty');
+			})
+		})
+	</script>
+	<style type="text/css">
+		.box{
+			width:200px;
+			height:200px;
+			background-color:gold;
+		}
+
+		.sty{
+			background-color:green;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" name="" value="切换" id="btn">
+	<div class="box"></div>
+</body>
+</html>

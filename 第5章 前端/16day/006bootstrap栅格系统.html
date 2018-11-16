@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>bootstrap 容器</title>
+	<!-- bootstrap 栅格系统
+		bootstrap将页面横向分为12等分，按照12等分定义了适应不同宽度等分的样式类，这些样式类组成了一套响应式、移动设备优先的流式栅格系统：
+
+		1、col-lg-
+		2、col-md-
+		3、col-sm-
+		4、col-xs- -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<style type="text/css">
+		/*这是css3新增选择器中的属性选择器 可以去查看*/
+		/*属性选择器 匹配class含有col-的div*/
+		div[class*='col-']{
+			height:50px;
+			background-color:gold;
+			border:1px solid #000;
+			/*margin-bottom:20px;*/
+
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container" style="background-color:cyan">
+		ewdjwqd
+	</div>
+
+	<!-- 栅格系统横向12等分 所以后面的值加起来必须为12 通过变化浏览器窗口来查看效果 -->
+	<!-- bootstrap响应式查询区间：
+		               不变  ----(col-xs)
+			1、大于等于768  ----(col-sm-)
+			2、大于等于992 ----(col-md-)
+			3、大于等于1200 ----(col-lg-)
+			 -->
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3">col-lg-3</div>
+			<div class="col-lg-3">col-lg-3</div>
+			<div class="col-lg-3">col-lg-3</div>
+			<div class="col-lg-3">col-lg-3</div>
+		</div>
+		<br>
+		<br>
+		<div class="row">
+			<div class="col-md-4">col-md-4</div>
+			<div class="col-md-4">col-md-4</div>
+			<div class="col-md-4">col-md-4</div>
+		</div>
+		<br>
+		<br>
+		<div class="row">
+			<div class="col-sm-6">col-sm-6</div>
+			<div class="col-sm-4">col-sm-4</div>
+			<div class="col-sm-2">col-sm-2</div>
+		</div>
+		<br>
+		<br>
+		<div class="row">
+			<div class="col-xs-1">col-xs-6</div>
+			<div class="col-xs-4">col-xs-4</div>
+			<div class="col-xs-7">col-xs-2</div>
+		</div>
+	</div>
+</body>
+</html>

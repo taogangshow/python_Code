@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组方法</title>
+	<script type="text/javascript">
+		var aRr = [1,2,3,4];
+		// join() 将数组成员通过一个分隔符合并成字符串
+		var sTr = aRr.join('-');
+		var sTr2 = aRr.join('');
+		// alert(sTr);弹出1-2-3-4
+		// alert(sTr2);弹出1234
+
+		// push() 和 pop() 从数组最后增加成员或删除成员
+		aRr.push(5);
+		// alert(aRr);//弹出 1,2,3,4,5
+
+		aRr.pop(); 
+		// alert(aRr); // 弹出1,2,3
+
+		//unshift()和 shift() 从数组前面增加成员或删除成员
+		aRr.unshift(0);
+		alert(aRr); //弹出0,1,2,3,4
+
+		aRr.shift();
+		alert(aRr) //弹出1,2,3,4
+
+		// reverse() 将数组反转
+		aRr.reverse();
+		alert(aRr); //弹出4,3,2,1
+
+		// indexOf() 返回数组中元素第一次出现的索引值
+		var aRr2 = ['a','c','b','d','b','c','d','a'];
+		var num = aRr2.indexOf('b');
+		alert(num); //弹出2
+
+		// splice() 在数组中增加或删除成员
+		var aRr3 = ['a','b','c','d','a','b','c','d']
+		aRr3.splice(2,1)//从第2个元素开始，删除1个元素
+		alert(aRr3) //弹出 a,b,d,a,b,c,d
+
+		aRr3.splice(3,2,'e','f','g')
+		alert(aRr3) //弹出 a,b,d,e,f,g,c,d
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

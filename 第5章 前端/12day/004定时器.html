@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 
+	定时器：
+    setTimeout  只执行一次的定时器 
+    clearTimeout 关闭只执行一次的定时器
+    setInterval  反复执行的定时器
+    clearInterval 关闭反复执行的定时器 -->
+	<title>定时器</title>
+	<script type="text/javascript">
+		var timer = setTimeout(function(){
+			alert("hello 定时器")
+		},3000)
+
+		// 关闭定时器
+		clearTimeout(timer)
+
+		var timer2 = setInterval(function(){
+			alert('hello 反复定时器哟')
+		},3000)
+
+		clearInterval(timer2);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

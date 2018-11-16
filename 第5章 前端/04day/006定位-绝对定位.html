@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绝对定位</title>
+	<!-- 
+	1.relative 生成相对定位元素，元素所占据的文档流的位置不变，元素本身相对文档流的位置进行偏移
+	2.absolute 生成绝对定位元素，元素脱离文档流，不占据文档流的位置，可以理解为漂浮在文档流的上方，相对于上一个设置了相对或者绝对或者固定定位的父级元素来进行定位，如果找不到，则相对于body元素进行定位。
+	3.fixed 生成固定定位元素，元素脱离文档流，不占据文档流的位置，可以理解为漂浮在文档流的上方，相对于浏览器窗口进行定位。
+	4.static 默认值，没有定位，元素出现在正常的文档流中，相当于取消定位属性或者不设置定位属性
+	5.inherit 从父元素继承 position 属性的值 -->
+	<style type="text/css">
+		.con{
+			width: 400px;
+			height: 400px;
+			border:1px solid #000;
+			margin:100px auto 0;
+			/*将父级设置为相对*/
+			position: relative;
+		}
+		.con div{
+			background-color: gold;
+			width: 200px;
+			height: 100px;
+			margin: 20px;
+			text-align: center;
+			font-size: 40px;
+		}
+		/*body设置权重，因为层级只有一位导致第一个盒子的背景色还是gold而不是green*/
+		body .box1{
+			/*当取消position属性时top和left没有任何作用*/
+			/*绝对定位
+			以顶级最大的父亲body进行定位
+			一般做子级的绝对定位都会把父级设置为相对定位，不设置偏移，那么它就作为一个子集偏移的参照
+			*/
+
+			position: absolute;
+			top:-50px;
+			left:-50px;
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<div class="con">
+		<div class="box1">1</div>
+		<div class="box2">2</div>
+		<div class="box3">3</div>
+	</div>
+</body>
+</html>

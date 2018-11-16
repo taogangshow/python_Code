@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="/static/booktest/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+
+        $(function(){
+            //获取省的对象
+            pro = $('#pro')
+            $.get('/area/0/',function(data){
+                //data返回的数据格式为:{'data':[[],[],[]]}
+
+                //遍历获取字典中的键data的value值
+                $.each(data.data,function(index,item){
+                    //index代表元素索引　itme代表对应变量的值
+                    //item  = [id,title] 在视图area2中已经筛选了
+                    //往对象pro中追加内容
+                    pro.append('<option value="'+item[0]+'">'+item[1]+'</option>')
+                })
+            })
+        });
+    </script>
+</head>
+<body>
+<select name="" id="pro">
+    <option value="">请选择省</option>
+</select>
+<select name="" id="city">
+    <option value="">请选择市</option>
+</select>
+<select name="" id="dis">
+    <option value="">请选择区</option>
+</select>
+</body>
+</html>

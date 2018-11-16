@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>清除浮动</title>
+	<!-- 清除浮动
+		面试会考
+
+	1.父级上增加属性overflow：hidden
+	2.在最后一个子元素的后面加一个空的div，给它样式属性 clear:both（不推荐）
+	3.使用成熟的清浮动样式类，clearfix -->
+	<style type="text/css">
+		.con,.con2{
+			width: 300px;
+			/*不设定高度让内容撑开*/
+			/* height: 300px; */
+			border:1px solid #000;
+			margin:100px auto 0;
+			/*解决内联元素间隙的方法 */
+			font-size: 0px;
+			/*height: 300px;*/
+		}
+		.con a{
+			width: 50px;
+			/*不设定高度让内容撑开*/
+			/*height: 50px;*/
+			/*需要将行内元素转换成行内块元素*/
+			/*因为行内元素不支持宽和高*/
+			background-color: gold;
+			display: inline-block;
+			font-size: 16px;
+			margin:10px;
+			text-align: center;
+			line-height: 50px;
+			text-decoration: none;
+		}
+		.con2{
+			/*清除浮动的方法一
+			overflow: hidden;
+			*/
+		}
+		/*通过浮动来使行内元素转换成行内块元素*/
+		.con2 a{
+			width: 50px;
+			background-color: gold;
+			font-size: 16px;
+			margin:10px;
+			text-align: center;
+			line-height: 50px;
+			text-decoration: none;
+			float:left;
+		}
+
+		/*清除浮动的方法三
+		创建清除浮动的类*/
+		/*之前我们在margin-top塌下时用过clearfix
+		之前用的是clearfix:before 代表在元素前面加东西
+		而clearfix:after 代表在元素的最后面加东西
+		下面的类的意思就是说在元素的后面塞了一个空字符串
+		设置里面的内容是clear:both;类似方法二，只不过用样式来加
+		用起来就很方便	
+		*/
+
+		/*.clearfix:after{
+			content: "";
+			display: table;
+			clear: both;
+		}*/
+
+		/*清除margin塌陷的方法*/
+		/*.clearfix:before{
+			content: "";
+			display: table;
+		}*/
+
+		/*将上面两种清除写在一起*/
+		.clearfix:before,.clearfix:after{
+			content: "";
+			display: table;
+		}
+		.clearfix:after{
+			clear: both;
+		}
+		/*这个是为了兼容ie的写法，因为ie不支持after*/
+		/*因为ie浏览器特有的功能就是通过样式来缩放网页大小
+		而zoom:1;的意思是代表网页不缩放
+		*/
+		.clearfix{
+			zoom: 1;
+		}
+
+		.con3{
+			width: 300px;
+			border:1px solid #000;
+			margin:100px auto 0;
+
+		}
+		.con3 span{
+			background-color: gold;
+			/*display: inline-block;*/
+			float: left;
+		}
+	</style>
+</head>
+<body style="height: 2000px">
+	<div class="con">
+		<a href="">1</a>
+		<a href="">2</a>
+		<a href="">3</a>
+		<a href="">4</a>
+		<a href="">5</a>
+		<a href="">6</a>
+		<a href="">7</a>
+		<a href="">8</a>
+		<a href="">9</a>
+		<a href="">10</a>
+		<a href="">11</a>
+		<a href="">12</a>
+	</div>
+
+	<div class="con2 clearfix">
+		<a href="">1</a>
+		<a href="">2</a>
+		<a href="">3</a>
+		<a href="">4</a>
+		<a href="">5</a>
+		<a href="">6</a>
+		<a href="">7</a>
+		<a href="">8</a>
+		<a href="">9</a>
+		<a href="">10</a>
+		<a href="">11</a>
+		<a href="">12</a>
+		<!-- 清除浮动的方法二 ---不推荐使用
+		<div style="clear: both;"></div>
+		-->
+	</div>
+	<!--
+	行内元素通过浮动转换成行内块元素，转换成的行内块元素和正在的行内块元素是由区别的
+	区别在于1.它不会因为代码换行产生间距 2.它有浮动的特性 
+	 -->
+	<div class="con3 clearfix">
+		<span>span元素</span>
+		<span>span元素</span>
+		<span>span元素</span>
+		<span>span元素</span>
+		<span>span元素</span>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>时钟</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oDiv = document.getElementById('div1');
+			function timeleft(){
+
+
+				var now = new Date();
+				// 实际开发中此时间从服务器获取：
+				// 2018年 10 月 20 日 月要减一  这是个坑
+				// var futrue = new Date(2018,9,20,24,0,0);
+				var futrue = new Date(2018,9,14,22,0,0);
+				// alert(futrue-now);
+
+				// 转换成秒
+				var lefts = parseInt((futrue-now)/1000);
+				// alert(lefts);
+
+				var day = parseInt(lefts/86400);
+				// alert(day);
+
+				var hour = parseInt((lefts%86400)/3600);
+				// alert(hour);
+
+				var minute = parseInt(((lefts%86400)%3600)/60);
+
+				var second = lefts%60;
+				if(lefts<=0)
+				{
+					window.location.href = "http://www.itcast.com";
+				}
+
+				oDiv.innerHTML = '距离2018年10月14日晚24时还有'+day+'天'+todou(hour)+'时'+todou(minute)+'分'+todou(second)+'秒';
+			}
+			timeleft();
+
+			setInterval(timeleft,1000);
+
+
+		}
+		function todou(num){
+			if(num<10){
+				return '0'+num;
+			}
+			else
+			{
+				return num;
+			}
+
+		}
+	</script>
+	<style type="text/css">
+		.now_time{
+			text-align:center;
+			margin-top:50px;
+			font:bold 30px/30px 'Microsoft Yahei';
+			color:#9a98b4;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1" class="now_time"></div>
+</body>
+</html>

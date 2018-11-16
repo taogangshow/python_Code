@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单</title>
+</head>
+<body>
+    
+    <!-- http://www.itcast.cn/
+    	?username=tome
+    	&pwd=12345
+    	&gender=0
+    	&like=travel
+    	&site=1
+    	&info=hello -->
+
+	<h3>用户注册</h3>
+	<!-- 是form不是from -->
+	<!-- value的作用就是把值存起来 -->
+	<!-- 当输入表单信息后点击提交就会跳转到传智播客的网站 -->
+	    <!-- 然后网址的显示为http://www.itcast.cn/?username=tome&pwd=12345&gender=0&like=travel&site=1&info=hello -->
+	<!-- 默认是get方式提交网址会显示出提交的用户密码等表单信息 -->
+	<!-- 将方式修改为post即地址栏看不到信息F12开发模式查看信息存到报文rom data里面查看目录下的HTTP提交的信息.jpg图片
+	-->
+	<form action="http://www.itcast.cn" method="post">
+		<div>
+			<!-- for属性的作用就是当你点击用户名而不是那个框的时候也可以输入 -->
+			<label for="username">用户名:</label>
+			<!-- 文本输入框 -->
+			<input type="text" name="username" id="username">
+		</div>
+		<br>
+		<div>
+			<label for="pwd">密码:</label>
+			<!-- 面密码输入框 -->
+			<input type="password" name="pwd" id="pwd">
+		</div>
+		<br>
+		<div>
+			<label>性别:</label>
+			<!-- for当你点击文字的时候也能行 -->
+			<!-- 单选框 -->
+			<input type="radio" name="gender" id="male" value="0"><label for="male">男</label>
+			<input type="radio" name="gender" id="female" value="1"><label for="female">女</label>
+		</div>
+		<br>
+		<div>
+			<label>爱好:</label>
+			<!-- 复选框 -->
+			<input type="checkbox" name="like" value="game">游戏
+			<input type="checkbox" name="like" value="travel">旅游
+			<input type="checkbox" name="like" value="shopping">逛街
+			<input type="checkbox" name="like" value="take phone">拍照
+		</div>
+		<br>
+		<div>
+			<label>籍贯:</label>
+			<!-- 选择框 -->
+			<select name="site">
+				<option value="0">北京</option>
+				<option value="1">上海</option>
+				<option value="2">广州</option>
+				<option value="3">深圳</option>
+			</select>
+		</div>
+		<br>
+		<div>
+			<!-- 它的值不用设定value值因为是上传的图片 -->
+			<label>照片:</label>
+			<!-- 上传文件 -->
+			<input type="file" name="">
+		</div>
+		<br>
+		<div>
+			<label>个人描述:</label>
+			<textarea name="info"></textarea>
+		</div>
+		<br>
+		<!-- 提交和重置 -->
+		<input type="submit" name="" value="提交">
+	    <input type="reset" name="" value="重置">
+	    <!-- 单纯做个按钮 -->
+	    <input type="button" name="" value="按钮">
+	    <!-- 帮我们在表单里存一些值 -->
+	    <input type="hidden" name="hid" value="10000">
+	    <!-- 用图片方式作提交 -->
+	    <input type="image" name="" src="images/new.png">
+	    
+	</form>
+	
+</body>
+</html>

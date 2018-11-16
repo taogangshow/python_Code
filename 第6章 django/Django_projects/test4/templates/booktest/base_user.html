@@ -1,0 +1,9 @@
+{% extends 'booktest/base.html'%}
+{% block content1 %}
+    <table border="1px">
+        <tr>
+            <td style="height:300px">用户<br>导航</td>
+            <td>{% block user_content %}{% endblock %}</td>
+        </tr>
+    </table>
+{% endblock content1 %}

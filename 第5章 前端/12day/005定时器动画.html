@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定时器动画</title>
+	<!-- 
+	定时器：
+    setTimeout  只执行一次的定时器 
+    clearTimeout 关闭只执行一次的定时器
+    setInterval  反复执行的定时器
+    clearInterval 关闭反复执行的定时器 -->
+	<script type="text/javascript">
+		window.onload = function(){
+			var oBox = document.getElementById('box');
+			var left = 20;
+
+			var timer = setInterval(function(){
+
+				left+=2;
+				oBox.style.left = left+'px';
+
+
+				if(left>800){
+					clearInterval(timer);
+				}
+
+			},30)
+
+
+
+
+		}
+	</script>
+	<style type="text/css">
+		.box{
+			width:100px;
+			height:100px;
+			background-color:gold;
+			position:fixed;
+			left:20px;
+			right:20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box" id="box"></div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery 索引值</title>
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// 第一种获取li元素
+			// $('.list li')
+
+			// 第二种获取li元素
+			$('.list').children('li').click(function(){
+				// 使用原生的方法弹出li元素中的内容
+				// alert(this.innerHTML);
+
+				// 使用jquery弹出li元素索引值，原生的无法直接弹出
+				alert($(this).index());
+			});
+		});
+	</script>
+	<style type="text/css">
+		.list li{
+			background-color:gold;
+			margin-top:10px;
+			height:30px;
+		}
+	</style>
+</head>
+<body>
+	<ul class="list">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+	</ul>
+</body>
+</html>

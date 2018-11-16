@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cookie</title>
+	<!-- 本地存储
+	本地存储分为cookie，以及新增的localStorage和sessionStorage 
+	cookie 存储在本地，容量最大4k，在同源的http请求时携带传递，损耗带宽，可设置访问路径，只有此路径及此路径的子路径才能访问此cookie，在设置的过期时间之前有效。-->
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery.cookie.js"></script>
+	<script type="text/javascript">
+
+		//要在服务器环境下运行该网页 检查元素 在APPlication下查看cookie
+
+		// 写入cookie
+		$.cookie('mycookie','ok!',{expires:7,path:'/'});
+
+		// 读cookie
+		var val = $.cookie('mycookie');
+		alert(val);
+		
+
+
+	</script>
+</head>
+<body>
+	<td><a href="">+Delete+</a></td>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>匿名函数</title>
+	<!-- 定义的函数可以不给名称，这个叫做匿名函数，可以将匿名函数直接赋值给元素绑定的事件来完成匿名函数的调用。 -->
+	<script type="text/javascript">
+		window.onload = function(){
+			var oDiv = document.getElementById('div1')
+
+			// oDiv.onclick = myalert;
+
+			// function myalert(){
+			// 	alert('ok!')
+			// }
+
+
+			// 这样可以简化我们的代码 匿名函数
+
+			oDiv.onclick = function(){
+				alert('OK!')
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<div id="div1">这是一个div元素</div>
+</body>
+</html>

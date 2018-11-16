@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{#Django会默认进行转义则网页上显示<h1>123</h1>字符串#}
+{#{{t1|escape}}使用escape过滤器进行转义#}
+{{ t1 }}
+<hr>
+{#关闭转义第一种方法，使用safe过滤器让网页中显示html<h1>123</h1>的标签效果#}
+{{ t2|safe }}
+<hr>
+{#关闭转义第二种方法#}
+{% autoescape off%}
+    {{ t3 }}
+{% endautoescape %}
+<hr>
+{#这里的h4并没有在视图中定义,我们这里定义h4默认设置字面值#}
+{% comment %}
+切记从视图传递到模板中的字符串Ｄjango才会默认进行转义
+而在模板中直接写是不会给转义的，如果想转义，只能手动转义
+{% endcomment %}
+字面值：<br>
+{{ t4|default:'<h1>abc</h1>'}}
+<br>
+手动转义：{{ t4|default:'&lt;h1&gt;abc&lt;/h1&gt;' }}
+</body>
+</html>

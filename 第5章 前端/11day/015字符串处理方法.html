@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 
+	字符串处理方法
+	1、字符串合并操作：“ + ”
+	2、parseInt() 将数字字符串转化为整数
+	3、parseFloat() 将数字字符串转化为小数
+	4、split() 把一个字符串分隔成字符串组成的数组
+	5、charAt() 获取字符串中的某一个字符
+	6、indexOf() 查找字符串是否含有某字符
+	7、substring() 截取字符串 用法： substring(start,end)（不包括end）
+	8、toUpperCase() 字符串转大写
+	9、toLowerCase() 字符串转小写 -->
+	<title>字符串处理方法</title>
+	<script type="text/javascript">
+		
+		var name = 'tom';
+		var age = 18;
+		alert('我的名字叫做'+name+','+'年龄是:'+age+'岁')
+
+		var a = 12;
+		var b = '34';
+
+		var c = 5.6;
+
+		var d = '123abc';
+
+		var e = 4.2;
+
+
+		//alert(a+b);  //弹出1234
+
+		//alert(parseInt(a)+parseInt(b));
+
+		//alert(parseInt(c)); 弹出 5
+
+		// alert(parseInt(d)); 弹出 123
+
+		alert(parseFloat(c)+parseFloat(e)) //弹出9.8
+
+		var f = 0.1
+		var g = 0.2
+
+		alert(parseFloat(f)+parseFloat(g)) //结果为0.30000000004
+		// 相加等于0.30000000004的问题，解决方法是先乘以100，再除以100
+		alert((parseFloat(f)*100+parseFloat(g)*100)/100)
+
+		var sTr = '2018-10-11';
+		var aRr = sTr.split('-');
+		var aRr2 = sTr.split('');
+
+
+		// 调试程序的方法
+		// 1、alert
+
+		// 2、console.log
+
+		// 3、document.title
+
+
+		// 1.alert(aRr);
+
+		// 第二种调试方法
+		console.log(aRr);
+		console.log(aRr2);
+
+		// 第三种调试方式
+		document.title = aRr2;
+
+
+		var sTr2 = '#div1';
+		var sTr3 = '.div1';
+
+		var sTr4 = sTr2.charAt(0);
+
+		var sTr5 = 'Microsoft Yahei';
+
+		if(sTr4=='#')
+		{
+			alert('id选择器');
+		}
+
+		var num = sTr5.indexOf('Yahei')
+		var num2 = sTr5.indexOf('xxhei')
+		alert(num); //弹出10
+
+		alert(num2); //没有找到就会弹出-1；
+
+		var sTr6 = sTr5.substring(10,15);  //从第10截到第14个
+		alert(sTr6); //弹出Yahei
+
+		var sTr7 = sTr5.substring(10); //从第10个截到结尾
+		alert(sTr7);//弹出Yahei
+
+		// 全部转大写
+		alert(sTr7.toUpperCase())
+
+		// 全部转小写
+		alert(sTr7.toLowerCase())
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>内联元素</title>
+	<!-- 内联元素
+	内联元素，也可以称为行内元素，布局中常用的标签如：a、span、em、b、strong、i等等都是内联元素，它们在布局中的行为：
+
+	支持部分样式（不支持宽、高、margin上下、padding上下）
+	宽高由内容决定
+	盒子并在一行
+	代码换行，盒子之间会产生间距
+	子元素是内联元素，父元素可以用text-align属性设置子元素水平对齐方式，用line-height属性值设置垂直对齐方式 -->
+
+	<style type="text/css">
+		
+		.con,.con2{
+			width: 500px;
+			height: 300px;
+			border:1px solid #333;
+			margin:50px auto 0;
+			/* 第二种方法 */
+			font-size: 0px;
+		}
+		.con a{
+			background-color: yellow;
+			text-decoration: none;
+			/*给内联元素设置宽和高没有用，内联元素不支持这两个属性*/
+			/*内联元素的宽高是由内容决定*/
+			width: 500px;
+			height: 300px;
+
+			/*maigin左右是支持的
+			margin-left: 30px;
+			margin-right: 30px;
+			*/
+
+			/*margin上下是不支持的
+			margin-top:50px;
+			margin-bottom:50px;
+			*/
+
+			/*padding左右支持，上下不支持*/
+			padding:0px 20px;
+			font-size: 20px;
+		}
+		.con2{
+			text-align: center;
+			line-height: 300px
+		}
+
+		.con2 a{
+			background-color: yellow;
+			text-decoration: none;
+			font-size: 20px;
+
+
+		}
+	</style>
+</head>
+<body>
+	<div class="con">
+		<!-- 解决内联元素间隙的方法 
+		1、去掉内联元素之间的换行
+		2、将内联元素的父级设置font-size为0，内联元素自身再设置font-size
+		 -->
+
+		<!-- 第一种方法:
+		<a href="#">这是第一个a标签这是第一个a标签</a><a href="#">这是第二个a标签</a><a href="#">这是第三个a标签</a><a href="#">这是第四个a标签</a><a href="#">这是第五个a标签</a><a href="#">这是第六个a标签</a><a href="#">这是第七个a标签</a> -->
+
+
+		<a href="#">这是第一个a标签这是第一个a标签</a>
+		<a href="#">这是第二个a标签</a>
+		<a href="#">这是第三个a标签</a>
+		<a href="#">这是第四个a标签</a>
+		<a href="#">这是第五个a标签</a>
+		<a href="#">这是第六个a标签</a>
+		<a href="#">这是第七个a标签</a>
+		
+	</div>
+	<div class="con2">
+		<a href="#">这是第一个a标签这是第一个a标签</a>
+	</div>
+	
+</body>
+</html>

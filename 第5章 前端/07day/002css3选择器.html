@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css3 新选择器</title>
+	<style type="text/css">
+		ul{
+			list-style:none;
+		}
+		ul li{
+			background-color:green;
+			margin-top:10px;
+		}
+
+		/*1、E:nth-child(n)：匹配元素类型为E且是父元素的第n个子元素
+		li:nth-child(1){
+			background-color:pink
+		}
+		li:nth-child(3){
+			background-color:yellow;
+		}
+		li:nth-child(5){
+			background-color:red;
+		}
+		*/
+
+		/*括号里面接受代数(2n)代表偶数行变成红色，(2n+1)代表奇数行
+		li:nth-child(2n){
+			background-color:red;
+		*/
+
+		/*8、E:first-of-type：匹配父元素的第一个类型为E的子元素
+		在相同元素标签下与li:nth-child(n)没有区别，但是在不同的元素结构下就会出先以下区别*/
+		li:nth-of-type(1){
+			background-color:pink;
+		}
+		li:nth-of-type(3){
+			background-color:yellow;
+		}
+		li:nth-of-type(5){
+			background-color:red;
+		}
+		
+	
+		.box div{
+			background-color:green;
+			margin-bottom:10px;
+		}
+
+		/*E:nth-child(n)与E:first-of-type的区别*/
+		/*div容器的有div标签混合p标签，nth-child(3)的意思就是先找到div往下第三个元素<p>p标签</p>第三个子元素，而且这个子元素的类型是div，就匹配 ，所以没有任何背景颜色变化
+		.box div:nth-child(3){
+			background-color:red;
+		}
+		*/
+		/*nth-of-type(3)的意思就是直接找第三个div元素，即<div>3</div>变成了红色
+		 父级下面第三个div元素，碰到不同类型的元素跳过*/
+		.box div:nth-of-type(3){
+			background-color:red
+		}
+	</style>
+</head>
+<body>
+	<h3>ul容器</h3>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+	</ul>
+	<h3>div容器</h3>
+	<div class="box">
+		<div>1</div>
+		<div>2</div>
+		<p>p标签</p>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		<div>6</div>
+		<div>7</div>
+		<div>8</div>
+	</div>
+</body>
+</html>
